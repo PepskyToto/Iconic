@@ -16,17 +16,24 @@
 
     <!-- Quatre photos de même taille (col-6) disposées en deux lignes -->
     <div class="col-6 col-md-3 mb-3">
-      <%= image_tag "placeholder.jpg", class: "img-fluid", alt: "Photo 1" %>
+        <%= image_tag "placeholder.jpg", class: "img-fluid crop-image", alt: "Photo 1" %>
     </div>
     <div class="col-6 col-md-3 mb-3">
-      <%= image_tag "placeholder.jpg", class: "img-fluid", alt: "Photo 2" %>
+        <%= image_tag "placeholder.jpg", class: "img-fluid crop-image", alt: "Photo 2" %>
+    </div>
+
+    
+    <div class="col-6 col-md-3 mb-3">
+      <div class="crop-container">
+        <%= image_tag "placeholder.jpg", class: "img-fluid crop-image", alt: "Photo 3" %>
+      </div>
     </div>
     <div class="col-6 col-md-3 mb-3">
-      <%= image_tag "placeholder.jpg", class: "img-fluid", alt: "Photo 3" %>
-    </div>
-    <div class="col-6 col-md-3 mb-3">
-      <%= image_tag "placeholder.jpg", class: "img-fluid", alt: "Photo 4" %>
+      <div class="crop-container">
+        <%= image_tag "placeholder.jpg", class: "img-fluid crop-image", alt: "Photo 4" %>
+      </div>
     </div>
   </div>
 </div>
+
 
