@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
     @product = Product.find_by(id: params[:id])
 
     if @product.nil?
-      redirect_to products_url, notice: "Product not found."
+      redirect_to products_path, notice: "Product not found."
     end
   end
 
@@ -16,14 +16,9 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new
-    @product.name = params[:name]
-    @product.price = params[:price]
-    @product.description = params[:description]
-    @product.image = params[:image]
-
+    @product = Product.new(set_params)
     if @product.save
-      redirect_to products_url, notice: "Product created successfully."
+      redirect_to products_path, notice: "Product created successfully."
     else
       render 'new'
     end
@@ -57,4 +52,11 @@ class ProductsController < ApplicationController
 
     redirect_to products_url, notice: "Product deleted."
   end
+
+  private
+
+  def set_params
+    params.require(:product).permit(:title, :category, :size, :price, :description, :availability, :user_id)
+  end
+
 end
