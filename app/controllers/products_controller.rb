@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @products = Product.all
   end
@@ -10,6 +11,10 @@ class ProductsController < ApplicationController
       redirect_to products_path, notice: "Product not found."
     end
   end
+
+#  def search
+#    @products = Product.where("title LIKE ?", "%#{params[:search]}%")
+#  end
 
   def new
     @product = Product.new
