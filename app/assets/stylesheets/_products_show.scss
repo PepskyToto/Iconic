@@ -1,0 +1,61 @@
+#main_container{
+  background-color: #F6F1E9;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;}
+
+.product_images{
+  border-radius: 20px;
+}
+
+.colored-border-bottom {
+  border-bottom: 2px solid #b4b4b4; /* Remplacez #000 par la couleur de votre choix */
+  margin-bottom: 10px; /* Ajustez la marge inférieure selon vos besoins */
+}
+
+.reservation-box{
+  background-color: #F6F1E9;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+.resa-button{
+  border-radius: 20px;
+  background-color: #FCF1B7;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.501), rgba(255,255,255,0));
+  padding: 10px 20px; /* Ajustez le rembourrage selon vos besoins */
+  color: #272727; /* Couleur du texte */
+  border: none; /* Supprimer la bordure si nécessaire */
+  cursor: pointer; /* Style du curseur au survol */
+  font-size: 16px;
+  transition: background-color 0.7s ease; 
+  &:hover {
+    background-color: rgb(187, 135, 239);
+  }
+}
+// .resa-button{
+//   border-radius: 20px;
+//   background: linear-gradient(to right, #efdf87, #FCF1B7);
+//   padding: 10px 20px; /* Ajustez le rembourrage selon vos besoins */
+//   color: #272727; /* Couleur du texte */
+//   border: none; /* Supprimer la bordure si nécessaire */
+//   cursor: pointer; /* Style du curseur au survol */
+//   font-size: 16px;
+//   transition: background 1s ease, color 1s ease; 
+//   &:hover {
+//     background: linear-gradient(to left, #efdf87, #FCF1B7);
+//     color: #d50808;
+//   }
+// }
+
+
+// div{
+//   background-color: deeppink;
+//   background-image: linear-gradient( white, rgba(255,255,255,0));
+//   transition: background-color 1s;
+// }
+// div:hover{
+//   background-color: steelblue;
+// }
+// rgba(237.0000010728836, 216.00000232458115, 96.00000187754631, 1)
+// rgba(251.81250303983688, 241.49889886379242, 182.56406128406525, 1)
