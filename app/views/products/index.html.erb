@@ -1,18 +1,14 @@
-<h2 class = "p-2">All the lists</h2>
+<%= link_to "Add a new product", new_product_path, class: "btn btn-primary" %>
 
 <div class="cards">
   <% @products.each do |product| %>
-  <div class="card">
-    <%= link_to product_path(product) do %>
-
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));">
-          <p><%= product.title %></p>
-        </div>
-      <% end %>
-
-  </div>
+    <div class="card">
+      <i class="fa-solid fa-heart favorite-icon"></i>
+      <%= image_tag(product.image, alt: product.title) %>
+      <div class="card-info">
+        <h2><%= product.title %></h2>
+        <p class="description"><%= product.description %></p>
+      </div>
+    </div>
   <% end %>
 </div>
-
-
-<%= link_to "Add a new product", new_product_path %>

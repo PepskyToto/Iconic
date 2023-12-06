@@ -35,6 +35,6 @@ images = ["https://images.asos-media.com/products/asos-design-robe-longue-asymet
     title: Faker::Lorem.words(number: 3).join(' '), # Utilisation de Faker pour générer un titre aléatoire
     description: Faker::Lorem.sentence,
     availability: [true, false].sample,
-    image_url: images.sample,
+    image: images.sample,
   )
 end
