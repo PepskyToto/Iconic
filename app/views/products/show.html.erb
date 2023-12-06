@@ -36,10 +36,17 @@
         <%= link_to "Modifier", edit_product_path(@product), class: "btn btn-primary" %>
       <% end %>
     </div>
+    <% if current_user && current_user.id != @product.user_id %>
         <div class = "col-6 reservation-box">
           <h3><%= @product.price %>€ par jour</h3>
           <%= render 'booking-form' %>
         </div>
+    <% else %>
+      <div class = "col-6 reservation-box">
+        <h3><%= @product.price %>€ par jour</h3>
+      <h5>Ceci est votre article.</h5>
+      </div>
+    <% end %>
   </div>
 </div>
 
