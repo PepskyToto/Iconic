@@ -1,0 +1,73 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #B6BBC4;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux cartes de passer à la ligne lorsque l'espace est insuffisant */
+  justify-content: space-between; /* Espace entre les cartes et les bords de la fenêtre */
+  gap: 15px; /* Espacement horizontal entre les cartes */
+  padding: 30px; /* Espace entre les cartes et les bords de la fenêtre (margin) */
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 10px; /* Ajustez cette valeur pour le positionnement vertical */
+  right: 10px; /* Ajustez cette valeur pour le positionnement horizontal */
+  font-size: 24px; /* Ajustez la taille de l'icône selon vos besoins */
+  color: red; /* Changez la couleur de l'icône si nécessaire */
+}
+
+#test{
+  color: red;
+}
+
+.card {
+  position: relative;
+  width: 200px; /* ou la largeur que vous préférez */
+  overflow: hidden;
+  border-radius: 5px;
+  border: none;
+}
+
+.card img {
+  width: 200px; /* Définissez la largeur et la hauteur appropriées */
+  height: 300px;
+  object-fit: cover; /* Optionnel : ajustez la taille de l'image de fond */
+  background-repeat: no-repeat; /* Optionnel : empêchez la répétition de l'image de fond */
+  /* Autres styles CSS pour votre produit */
+}
+
+
+.card-info {
+  position: absolute;
+  bottom: 0;
+  background: rgba(244, 176, 131, 0.596); /* Fond semi-transparent */
+  color: white;
+  width: 100%;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.card:hover .card-info {
+  transform: translateY(0);
+}
+
+.description {
+  display: none;
+}
+
+.card:hover .description {
+  display: block;
+  padding: 10px;
+}
