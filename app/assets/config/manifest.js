@@ -6,3 +6,4 @@
 //= link bootstrap.min.js
 //= link_tree ../builds
 //= link controllers/toggle_controller.js
+//= link controllers/toggle_controller.js
