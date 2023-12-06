@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :products do 
     resources :bookmarks, only: [:new, :create] #maybe destroy?
   end
+  resources :bookings, only: [:new, :create, :destroy, :edit]
 
   resources :users, only: [:index] do
     resources :reviews, only: [:new, :create]

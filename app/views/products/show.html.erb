@@ -38,3 +38,16 @@
         </div>
   </div>
 </div>
+
+
+<%= simple_form_for @booking do |form| %>
+<%= form.input :start_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+<%= form.input :end_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+  <%= form.input :user_id %>
+  <%= form.input :product_id %>
+<%= form.button :submit, "Réserver" %>
+<% end %>
