@@ -5,12 +5,13 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @product_id = params[:product_id]
   end
 
   def create
     @booking = Booking.new(set_params)
-    @booking.user_id = params["booking"][:user_id]
-    @booking.product_id = params["booking"][:product_id]
+    @booking.user_id = current_user.id
+    #@booking.product_id = params["booking"][:product_id]
 
 
     if @booking.save
@@ -44,6 +45,6 @@ class BookingsController < ApplicationController
   private
 
   def set_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :product_id)
   end
 end

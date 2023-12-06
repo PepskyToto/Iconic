@@ -47,7 +47,6 @@
 <%= form.input :end_date,
             as: :string,
             input_html: { data: { controller: "datepicker" } } %>
-  <%= form.input :user_id %>
-  <%= form.input :product_id %>
+<%= form.hidden_field :product_id, value: params[:id] %>
 <%= form.button :submit, "Réserver" %>
 <% end %>
