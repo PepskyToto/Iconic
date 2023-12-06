@@ -1,5 +1,20 @@
+<%= link_to "Add a new product", new_product_path, class: "btn btn-primary" %>
+
+
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "Nouveau Produit", new_product_path, class: "btn btn-primary" %>
 
-<%# new_product GET    /products/new(.:format)  products#new %>
+
+
+<div class="cards">
+  <% @products.each do |product| %>
+    <div class="card">
+      <i class="fa-solid fa-heart favorite-icon"></i>
+      <%= image_tag(product.image_url, alt: product.title) %>
+      <div class="card-info">
+        <h2><%= product.title %></h2>
+        <p class="description"><%= product.description %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

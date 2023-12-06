@@ -14,15 +14,27 @@ end
 # Tableau de catégories possibles
 categories = ["robe de mariée", "pantalon", "pull", "costumes"]
 
+#user
+user = User.new
+user.email = 'test@example.com'
+user.encrypted_password = '#$taawktljasktlw4aaglj'
+user.password = '#$taawktljasktlw4aaglj'
+user.save!
+
+#images
+
+images = ["https://images.asos-media.com/products/asos-design-robe-longue-asymetrique-a-sequins-argentes-noir/204472339-2?$n_320w$&wid=317&fit=constrain", "https://images.asos-media.com/products/amy-lynn-mimi-robe-courte-a-sequins-circulaires-style-festival-arc-en-ciel/204073306-2?$n_320w$&wid=317&fit=constrain", "https://images.asos-media.com/products/bershka-robe-courte-bandeau-a-volants-et-sequins-argent/205785069-2?$n_320w$&wid=317&fit=constrain", "https://images.asos-media.com/products/amy-jane-london-aurelia-robe-longue-en-tulle-a-sequins-noir/204842594-2?$n_320w$&wid=317&fit=constrain", "https://images.asos-media.com/products/labelrail-x-dyspnea-robe-longue-drapee-a-sequins-violet/205509680-2?$n_320w$&wid=317&fit=constrain"]
+
 # Création de 20 instances de produits
 20.times do
   Product.create!(
-    user_id: 1, # Remplace 1 par l'ID de l'utilisateur approprié
+    user: user, # Remplace 1 par l'ID de l'utilisateur approprié
     category: categories.sample,
     size: rand(1..5), # Remplace 5 par le nombre maximum de tailles possible
     price: random_price,
     title: Faker::Lorem.words(number: 3).join(' '), # Utilisation de Faker pour générer un titre aléatoire
     description: Faker::Lorem.sentence,
-    availability: [true, false].sample
+    availability: [true, false].sample,
+    image_url: images.sample,
   )
 end
