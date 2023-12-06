@@ -11,6 +11,8 @@ def random_price
   rand(50..500)
 end
 
+User.create(username: "jf_vt", email: "jfvernet@icloud.com", password: "azerty")
+
 # Tableau de catégories possibles
 categories = ["robe de mariée", "pantalon", "pull", "costumes"]
 
