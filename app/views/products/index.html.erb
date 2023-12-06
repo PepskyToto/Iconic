@@ -1,4 +1,4 @@
-<h2 class = "p-2">All the lists</h2>
+<h2 class = "p-2">Toutes les annonces</h2>
 
 <div class="cards">
   <% @products.each do |product| %>
@@ -14,5 +14,6 @@
   <% end %>
 </div>
 
-
-<%= link_to "Add a new product", new_product_path %>
+<% if current_user %>
+  <%= link_to "Ajouter un nouveau produit", new_product_path %>
+<% end %>
