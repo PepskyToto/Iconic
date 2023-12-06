@@ -8,99 +8,37 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
   </head>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">Navbar</a>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <% if user_signed_in? %>
-        <%= current_user.username %>
-      <% end %>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-<%= render "shared/flashes" %>
+
 
   <body>
 
     <%= render "layouts/navbar" %>
-   <div class="row">
-  <div class="col">
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-    <label class="btn btn-outline-primary w-100" for="btnradio1">Femmes</label>
-  </div>
-  <div class="col">
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-    <label class="btn btn-outline-primary w-100" for="btnradio2">Homme</label>
-  </div>
-  <div class="col">
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-    <label class="btn btn-outline-primary w-100" for="btnradio3">Enfant</label>
-  </div>
-  <div class="col">
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-    <label class="btn btn-outline-primary w-100" for="btnradio4">Déguisements</label>
-  </div>
-</div>
-
-<table>
-  <tr>
-    <th>Produits</th>
-    <th>Couleurs</th>
-    <th>Taille</th>
-    <th>Textile</th>
-  </tr>
-  <tr>
-    <td><input type="checkbox">Robes de mariée</td>
-    <td><input type="checkbox">Blanc</td>
-    <td><input type="checkbox">Taille S</td>
-    <td><input type="checkbox">Laine</td>
-  </tr>
-  <tr>
-    <td><input type="checkbox">Robes de cocktail</td>
-    <td><input type="checkbox">Noir</td>
-    <td><input type="checkbox">Taille M</td>
-    <td><input type="checkbox">Coton</td>
-  </tr>
-  <tr>
-    <td><input type="checkbox">Robes de soirée</td>
-    <td><input type="checkbox">Bleu</td>
-    <td><input type="checkbox">Taille L</td>
-    <td><input type="checkbox">Polyester</td>
-  </tr>
-  <tr>
-    <td><input type="checkbox">Robes de mariée</td>
-    <td><input type="checkbox">Blanc</td>
-    <td><input type="checkbox">Taille S</td>
-    <td><input type="checkbox">Laine</td>
-  </tr>
-   <tr>
-    <td><input type="checkbox">Robes de soirée</td>
-    <td><input type="checkbox">Bleu</td>
-    <td><input type="checkbox">Taille L</td>
-    <td><input type="checkbox">Polyester</td>
-  </tr>
-</table>
       <%= yield %>
     </main>
   </body>
-</html>
+  <footer>
+<div class="footer">
+  <div class="footer-links">
+    <div class="caca">
+  <%= link_to 'Iconic, Inc.', root_path %>
+<%= link_to 'Confidentialité', root_path %>
+<%= link_to 'Conditions générales', root_path %>
+<%= link_to 'Contact', root_path %>
+
+</div>
+
+ <br>
+  <%# <div class="freuro ml-2">
+    <span>Français</span>
+    <span>EUR</span>
+  </div> %>
+  <div class="socials">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+    </div>
+    </footer>
