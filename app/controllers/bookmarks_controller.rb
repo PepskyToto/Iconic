@@ -15,7 +15,7 @@ class BookmarksController < ApplicationController
     if @bookmark.save
       redirect_to bookmarks_url, notice: "Bookmark created successfully."
     else
-      render 'new'
+      render 'new', status: :unprocessable_entity
     end
   end
 
