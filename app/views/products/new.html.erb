@@ -1,5 +1,4 @@
 <%= simple_form_for @product  do |form| %>
-  <%= form.association :user, collection: User.all, label_method: :username, value_method: :id, include_blank: 'Sélectionner un utilisateur' %>
   <%= form.input :category %>
   <%= form.input :size do %>
     <%= form.collection_select :size, %w[XS S M L XL XXL XXXL], :to_s, :to_s, prompt: 'Sélectionner une taille' %>
@@ -8,7 +7,6 @@
   <%= form.input :title %>
   <%= form.input :description %>
   <%= form.input :availability, as: :boolean %>
-  <%= form.input :image, as: :file%> <!-- Champ pour l'upload d'image --> 
+  <%= form.input :image, as: :file%> <!-- Champ pour l'upload d'image -->
   <%= form.button :submit, "Ajouter le produit" %>
 <% end %>
-
