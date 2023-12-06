@@ -1,5 +1,7 @@
+
 <%= link_to "Add a new product", new_product_path, class: "btn btn-primary" %>
 
+<h2 class = "p-2">Toutes les annonces</h2>
 <div class="cards">
   <% @products.each do |product| %>
     <div class="card">
@@ -12,3 +14,9 @@
     </div>
   <% end %>
 </div>
+
+
+<% if current_user %>
+  <%= link_to "Ajouter un nouveau produit", new_product_path %>
+<% end %>
+
