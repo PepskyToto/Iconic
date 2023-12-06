@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find_by(id: params[:id])
+    @booking = Booking.new
 
     if @product.nil?
       redirect_to products_path, notice: "Product not found."
@@ -22,10 +23,11 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(set_params)
+    @product.user = current_user
     if @product.save
       redirect_to products_path, notice: "Product created successfully."
     else
-      render 'new'
+      render 'new', status: :unprocessable_entity
     end
   end
 
@@ -39,10 +41,7 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find_by(id: params[:id])
-    @product.name = params[:name]
-    @product.price = params[:price]
-    @product.description = params[:description]
-    @product.image = params[:image]
+    @product.update(set_params)
 
     if @product.save
       redirect_to products_url, notice: "Product updated successfully."
