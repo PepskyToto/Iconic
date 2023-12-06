@@ -40,10 +40,7 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find_by(id: params[:id])
-    @product.name = params[:name]
-    @product.price = params[:price]
-    @product.description = params[:description]
-    @product.image = params[:image]
+    @product.update(set_params)
 
     if @product.save
       redirect_to products_url, notice: "Product updated successfully."

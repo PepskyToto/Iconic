@@ -1,0 +1,10 @@
+<%= simple_form_for @booking do |form| %>
+<%= form.input :start_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+<%= form.input :end_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+<%= form.hidden_field :product_id, value: params[:id] %>
+<%= form.button :submit, "Réserver", class: "resa-button" %>
+<% end %>
