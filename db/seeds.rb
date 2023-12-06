@@ -11,15 +11,22 @@ def random_price
   rand(50..500)
 end
 
+puts "cleaning database"
+Booking.destroy_all
+Product.destroy_all
+User.destroy_all
+
+
+puts "generating User"
 User.create(username: "jf_vt", email: "jfvernet@icloud.com", password: "azerty")
 
 # Tableau de catégories possibles
 categories = ["robe de mariée", "pantalon", "pull", "costumes"]
-
+puts "Generating products"
 # Création de 20 instances de produits
 20.times do
   Product.create!(
-    user_id: 1, # Remplace 1 par l'ID de l'utilisateur approprié
+    user_id: User.first.id, # Remplace 1 par l'ID de l'utilisateur approprié
     category: categories.sample,
     size: rand(1..5), # Remplace 5 par le nombre maximum de tailles possible
     price: random_price,
