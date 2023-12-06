@@ -8,31 +8,24 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new
-    @booking.user_id = params[:user_id]
-    @booking.room_id = params[:room_id]
-    @booking.start_date = params[:start_date]
-    @booking.end_date = params[:end_date]
-    @booking.total_price = params[:total_price]
+    @booking = Booking.new(set_params)
+    @booking.user_id = params["booking"][:user_id]
+    @booking.product_id = params["booking"][:product_id]
+
 
     if @booking.save
-      redirect_to bookings_url, notice: "Booking created successfully."
+      redirect_to bookings_path, notice: "Booking created successfully."
     else
       render 'new'
     end
   end
 
   def edit
-    @booking = Booking.find_by(id: params[:id])
+    @booking = Booking.find_by(set_params)
   end
 
   def update
-    @booking = Booking.find_by(id: params[:id])
-    @booking.user_id = params[:user_id]
-    @booking.room_id = params[:room_id]
-    @booking.start_date = params[:start_date]
-    @booking.end_date = params[:end_date]
-    @booking.total_price = params[:total_price]
+    @booking = Booking.find_by(set_params)
 
     if @booking.save
       redirect_to bookings_url, notice: "Booking updated successfully."
@@ -46,5 +39,11 @@ class BookingsController < ApplicationController
     @booking.destroy
 
     redirect_to bookings_url, notice: "Booking deleted."
+  end
+
+  private
+
+  def set_params
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
