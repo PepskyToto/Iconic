@@ -22,10 +22,11 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(set_params)
+    @product.user = current_user
     if @product.save
       redirect_to products_path, notice: "Product created successfully."
     else
-      render 'new'
+      render 'new', status: :unprocessable_entity
     end
   end
 

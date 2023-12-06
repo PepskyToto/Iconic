@@ -17,12 +17,19 @@
         </li>
       </ul>
         <nav>
-        <% if user_signed_in? %>
-          <%= current_user.username %>
-          <%= link_to 'Logout', destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-        <% else %>
-          <%= link_to 'Sign-in', new_user_session_path %>
-        <% end %>
+        <ul class="nav-item dropdown">
+          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+          </a>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <% if user_signed_in? %>
+            <ul><%= current_user.username %></ul>
+            <ul><%= link_to 'Logout', destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></ul>
+          <% else %>
+            <%= link_to 'Sign-in', new_user_session_path %>
+          <% end %>
+          </div>
+        </ul>
 </nav>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
