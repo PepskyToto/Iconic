@@ -26,11 +26,13 @@
     </div>
   </div>
 </div>
+
 <div class="mt-3">
   <div class = "row">
     <div class = "col-6">
       <h1 class="pb-3 colored-border-bottom"><%= @product.title %></h1>
       <p><%= @product.description %></p>
+      <%= link_to "Modifier", edit_product_path(@product), class: "btn btn-primary" %>
     </div>
         <div class = "col-6 reservation-box">
           <h3><%= @product.price %>€ par jour</h3>
