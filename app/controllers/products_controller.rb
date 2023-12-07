@@ -1,21 +1,22 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-    @products = Product.all
+    if params[:query].present?
+      @products = Product.search_by_title_and_description(params[:query])
+    else
+      @products = Product.all
+    end
   end
 
   def show
     @product = Product.find_by(id: params[:id])
-    @booking = Booking.new
+    @booking = Boo7king.new
 
     if @product.nil?
       redirect_to products_path, notice: "Product not found."
     end
   end
-
-#  def search
-#    @products = Product.where("title LIKE ?", "%#{params[:search]}%")
-#  end
 
   def new
     @product = Product.new

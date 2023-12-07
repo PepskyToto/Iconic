@@ -12,17 +12,27 @@ class BookmarksController < ApplicationController
 
   def new
     @bookmark = Bookmark.new
+    create
   end
 
   def create
-    @bookmark = Bookmark.new
-    @bookmark.user_id = params[:user_id]
-    @bookmark.room_id = params[:room_id]
-
-    if @bookmark.save
-      redirect_to bookmarks_url, notice: "Bookmark created successfully."
-    else
-      render 'new', status: :unprocessable_entity
+    @product = Product.find(params[:product_id])
+    existing_bookmark = Bookmark.find_by(product_id: @product.id, user_id: current_user)
+    if existing_bookmark
+    # Le bookmark existe, donc supprime-le
+    existing_bookmark.destroy
+    redirect_to root_path, notice: "Le produit a bien été retiré de vos favoris."
+    else 
+      @bookmark = Bookmark.new
+      @product = Product.find(params[:product_id])
+      @bookmark.product_id = @product.id
+      @bookmark.user_id = current_user.id
+      @bookmark.save
+      if @bookmark.save
+        redirect_to root_path, notice: "Le produit a bien été ajouté à vos favoris."      
+      else
+        redirect_to root_path, notice: "Veuillez vous connecter pour ajouter un produit à vos favoris."      
+      end
     end
   end
 

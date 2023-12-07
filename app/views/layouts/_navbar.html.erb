@@ -14,8 +14,8 @@
 </li>
 
 
-        <li class="nav-item">
-  <%= link_to("#", class: "nav-link") do %>
+  <li class="nav-item">
+  <%= link_to new_product_path, class: "nav-link" do %>
     <%= tag.i(class: "fa-solid fa-circle-plus") %>
   <% end %>
 </li>
@@ -38,9 +38,9 @@
           <% end %>
           </div>
         </ul>
-</nav>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      </nav>
+      <form class="d-flex" role="search" method="get" action="<%= root_path %>">
+        <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
