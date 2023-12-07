@@ -1,7 +1,19 @@
 .dropdown-menu {
   /* display: none; */
   position: absolute;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(223, 166, 123);
+  border-radius: 10px;
   padding: 5px;
+  color: rgb(223, 166, 123);
+}
+.btn-category {
+  background-color: rgb(223, 166, 123);
+  border-radius: 4px;
+  margin: 10px;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: none;
+  color: white;
 }
