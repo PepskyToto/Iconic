@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user_id: current_user.id)
   end
 
   def new
@@ -15,9 +15,9 @@ class BookingsController < ApplicationController
 
 
     if @booking.save
-      redirect_to bookings_path, notice: "Booking created successfully."
+      redirect_to root_path, notice: "Booking created successfully."
     else
-      render 'new'
+      redirect_to new_user_session_path, alert: "Booking creation failed. Please log in."
     end
   end
 

@@ -9,12 +9,12 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root to: "products#index"
-
-  resources :products do
+  resources :products, only: [:destroy], as: :delete_products
+  resources :products, except: [:destroy] do
     resources :bookmarks, only: [:new, :create, :destroy] #maybe destroy?
 
   end
-  resources :bookings, only: [:new, :create, :destroy, :edit]
+  resources :bookings, only: [:new, :create, :destroy, :edit, :index]
 
   resources :users, only: [:index] do
     resources :reviews, only: [:new, :create]

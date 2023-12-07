@@ -12,13 +12,201 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   </head>
 
-<%= render "shared/flashes" %>
 
 
   <body>
-
     <%= render "layouts/navbar" %>
-      <%= yield %>
+    
+  <article data-controller="toggle">
+   <div class="row">
+  <div class="col">
+    <input type="button" class="btn-check" name="btnradio" id="btnradio1" data-action="click->toggle#fire" autocomplete="off" checked>
+    <label class="btn btn-outline-primary w-100" for="btnradio1">Femmes</label>
+  </div>
+  <div class="col">
+    <input type="button" class="btn-check" name="btnradio" id="btnradio2"  data-action="click->toggle#fire2" autocomplete="off">
+    <label class="btn btn-outline-primary w-100" for="btnradio2">Homme</label>
+  </div>
+  <div class="col">
+    <input type="button" class="btn-check" name="btnradio" id="btnradio3" data-action="click->toggle#fire3" autocomplete="off">
+    <label class="btn btn-outline-primary w-100" for="btnradio3">Enfant</label>
+  </div>
+  <div class="col">
+    <input type="button" class="btn-check" name="btnradio" id="btnradio4" data-action="click->toggle#fire4" autocomplete="off">
+    <label class="btn btn-outline-primary w-100" for="btnradio4">Déguisements</label>
+  </div>
+
+
+</div>
+<div id="tableContainer">
+<table id="myTable" data-toggle-target="myTable" class="d-none">
+  <tr>
+    <th>Produits</th>
+    <th>Couleurs</th>
+    <th>Taille</th>
+    <th>Textile</th>
+  </tr>
+  <tr>
+    <td><input type="checkbox">Robes de mariée</td>
+    <td><input type="checkbox">Blanc</td>
+    <td><input type="checkbox">Taille S</td>
+    <td><input type="checkbox">Laine</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox">Robes de cocktail</td>
+    <td><input type="checkbox">Noir</td>
+    <td><input type="checkbox">Taille M</td>
+    <td><input type="checkbox">Coton</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox">Robes de soirée</td>
+    <td><input type="checkbox">Bleu</td>
+    <td><input type="checkbox">Taille L</td>
+    <td><input type="checkbox">Polyester</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox">Robes de mariée</td>
+    <td><input type="checkbox">Blanc</td>
+    <td><input type="checkbox">Taille S</td>
+    <td><input type="checkbox">Laine</td>
+  </tr>
+   <tr>
+    <td><input type="checkbox">Robes de soirée</td>
+    <td><input type="checkbox">Bleu</td>
+    <td><input type="checkbox">Taille L</td>
+    <td><input type="checkbox">Polyester</td>
+  </tr>
+</table>
+
+
+</div>
+<div id="tableContainer2">
+    <table id="myTable2" data-toggle-target="myTable2" class="d-none">
+  <tr>
+    <th>Produits</th>
+    <th>Couleurs</th>
+    <th>Taille</th>
+    <th>Textile</th>
+  </tr>
+  <tr>
+    <td><input type="checkbox">Costume tah les ouf</td>
+    <td><input type="checkbox">Blanc</td>
+    <td><input type="checkbox">Taille S</td>
+    <td><input type="checkbox">Laine</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox">Costume vreuument</td>
+    <td><input type="checkbox">Noir</td>
+    <td><input type="checkbox">Taille M</td>
+    <td><input type="checkbox">Coton</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox">Chemise tah les ouf</td>
+    <td><input type="checkbox">Bleu</td>
+    <td><input type="checkbox">Taille L</td>
+    <td><input type="checkbox">Polyester</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox">Costumes d'été</td>
+    <td><input type="checkbox">Blanc</td>
+    <td><input type="checkbox">Taille S</td>
+    <td><input type="checkbox">Laine</td>
+  </tr>
+   <tr>
+    <td><input type="checkbox">Costumes d'hiver</td>
+    <td><input type="checkbox">Bleu</td>
+    <td><input type="checkbox">Taille L</td>
+    <td><input type="checkbox">Polyester</td>
+  </tr>
+</table>
+</div>
+
+<div id="tableContainer3">
+    <table id="myTable3" data-toggle-target="myTable3" class="d-none">
+  <tr>
+    <th>Produits</th>
+    <th>Couleurs</th>
+    <th>Taille</th>
+    <th>Textile</th>
+  </tr>
+  <tr>
+    <td><input type="checkbox">Costume été</td>
+    <td><input type="checkbox">Blanc</td>
+    <td><input type="checkbox">Taille S</td>
+    <td><input type="checkbox">Laine</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox">Costume hiver</td>
+    <td><input type="checkbox">Noir</td>
+    <td><input type="checkbox">Taille M</td>
+    <td><input type="checkbox">Coton</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox">Chemise été</td>
+    <td><input type="checkbox">Bleu</td>
+    <td><input type="checkbox">Taille L</td>
+    <td><input type="checkbox">Polyester</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox">Chemise d'hiver</td>
+    <td><input type="checkbox">Blanc</td>
+    <td><input type="checkbox">Taille S</td>
+    <td><input type="checkbox">Laine</td>
+  </tr>
+   <tr>
+    <td><input type="checkbox">Costumes d'hiver</td>
+    <td><input type="checkbox">Bleu</td>
+    <td><input type="checkbox">Taille L</td>
+    <td><input type="checkbox">Polyester</td>
+  </tr>
+</table>
+</div>
+
+<div id="tableContainer4">
+    <table id="myTable4" data-toggle-target="myTable4" class="d-none">
+  <tr>
+    <th>Produits</th>
+    <th>Couleurs</th>
+    <th>Taille</th>
+    <th>Textile</th>
+  </tr>
+  <tr>
+    <td><input type="checkbox">Shrek</td>
+    <td><input type="checkbox">Blanc</td>
+    <td><input type="checkbox">Taille S</td>
+    <td><input type="checkbox">Laine</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox">Zelda</td>
+    <td><input type="checkbox">Noir</td>
+    <td><input type="checkbox">Taille M</td>
+    <td><input type="checkbox">Coton</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox">Pokemon</td>
+    <td><input type="checkbox">Bleu</td>
+    <td><input type="checkbox">Taille L</td>
+    <td><input type="checkbox">Polyester</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox">Bdsm</td>
+    <td><input type="checkbox">Blanc</td>
+    <td><input type="checkbox">Taille S</td>
+    <td><input type="checkbox">Laine</td>
+  </tr>
+   <tr>
+    <td><input type="checkbox">Père Noël</td>
+    <td><input type="checkbox">Bleu</td>
+    <td><input type="checkbox">Taille L</td>
+    <td><input type="checkbox">Polyester</td>
+  </tr>
+</table>
+</div>
+</article>
+
+<br>
+<br>
+    <%= yield %>
     </main>
   </body>
   <footer>

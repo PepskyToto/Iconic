@@ -21,7 +21,24 @@
 
 .resa-button{
   border-radius: 20px;
+  text-decoration: none;
   background-color: #FCF1B7;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.501), rgba(255,255,255,0));
+  padding: 10px 20px; /* Ajustez le rembourrage selon vos besoins */
+  color: #272727; /* Couleur du texte */
+  border: none; /* Supprimer la bordure si nécessaire */
+  cursor: pointer; /* Style du curseur au survol */
+  font-size: 16px;
+  transition: background-color 0.7s ease; 
+  &:hover {
+    background-color: #efdf87
+  }
+}
+
+.delete-button{
+  border-radius: 20px;
+  text-decoration: none;
+  background-color: #ffac8b;
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.501), rgba(255,255,255,0));
   padding: 10px 20px; /* Ajustez le rembourrage selon vos besoins */
   color: #272727; /* Couleur du texte */
