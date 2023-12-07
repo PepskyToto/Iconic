@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :products, only: [:destroy], as: :delete_products
   resources :products, except: [:destroy] do
     resources :bookmarks, only: [:new, :create] #maybe destroy?
-    
+
   end
   resources :bookings, only: [:new, :create, :destroy, :edit, :index]
   resources :users, only: [:index] do
