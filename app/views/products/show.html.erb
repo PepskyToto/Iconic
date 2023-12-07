@@ -27,6 +27,8 @@
   </div>
 </div>
 
+<div id = "main_container" class="container mt-5"></div>
+    <div class="col-10 mx-auto">
 <div class="mt-3">
   <div class = "row">
     <div class = "col-6">
@@ -35,17 +37,43 @@
     </div>
     <% if current_user && current_user.id == @product.user_id %>
         <div class = "col-6 reservation-box">
-      <h3><%= @product.price %>€ par jour</h3>
-      <h5>Ceci est votre article.</h5>
-              <%= link_to "Modifier", edit_product_path(@product), class: "resa-button" %>
-              <%= link_to 'Supprimer', delete_product_path(@product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "resa-button" %>
-        </div>
+          <div class="row justify-content-center">
+            <div class="text-center d-flex justify-content-center">
+            <h3><%= @product.price %>€</h3> <p class ="p-1"> par jour</p>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="text-center d-flex justify-content-center">
+          <h6>Ceci est votre article.</h6>
+          </div>
+          </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-6">
+              <div class="text-center d-flex justify-content-center">
+            <%= link_to "Modifier", edit_product_path(@product), class: "resa-button mx-auto text-center" %>
+            </div>
+            </div>
+            <div class="col-6">
+              <div class="text-center d-flex justify-content-center">
+            <%= link_to 'Supprimer', delete_product_path(@product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-button mx-auto text-center" %>
+            </div>
+            </div>
+            </div>
+          </div>
     <% else %>
       <div class = "col-6 reservation-box">
-          <h3><%= @product.price %>€ par jour</h3>
+            <div class="row justify-content-center">
+            <div class="text-center d-flex justify-content-center">
+            <h3><%= @product.price %>€</h3> <p class ="p-1"> par jour</p>
+            </div>
+          </div>
           <%= render 'booking-form' %>
       </div>
     <% end %>
+  </div>
+</div>
   </div>
 </div>
 

@@ -1,7 +1,7 @@
   <% @products.each do |product| %>
   <%= link_to product_path(product) do %>
     <div class="card">
-      <i class="fa-solid fa-heart favorite-icon"></i>
+      <i class="fa-solid fa-heart favorite-icon favorite-active"></i>
       <% if product.image.nil? %>
       <% product.image = "placeholder.jpg" %>
       <%= image_tag(product.image, alt: product.title) %>
