@@ -1,6 +1,5 @@
 
 <h2 class = "p-2">Toutes les annonces</h2>
-
 <div class="cards">
   <% @products.each do |product| %>
         <%= button_to 'Add to Favorites', product_bookmarks_path(product), method: :post, class: 'add-to-favorites-button' %>
@@ -20,7 +19,6 @@
       </div>
     <% end %>
   <% end %>
-  
 </div>
 
 <% if current_user %>
