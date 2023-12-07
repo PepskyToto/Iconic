@@ -38,7 +38,7 @@ sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
     availability: [true, false].sample,
     sexe: ["femme", "homme", "enfant"].sample,
     textile_type: ["coton", "soie", "lin", "laine"].sample,
-    couleurs: ["rouge","bleu"].sample,
+    couleurs: ["rouge","bleu","jaune"].sample,
     image: images.sample,
   )
 end
