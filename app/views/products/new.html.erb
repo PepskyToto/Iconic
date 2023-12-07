@@ -1,21 +1,23 @@
 <%= simple_form_for @product do |form| %>
-  <%= form.input :category %>
-  <%= form.input :sexe do %>
-    <%= form.collection_select :sexe, %w[Homme Femme Enfant], :to_s, :to_s, prompt: 'Sélectionner un sexe' %>
+  <%= form.input :category, label: "Catégorie" do %>
+    <%= form.collection_select :category, ['Sport de terre', 'Sport de mer', 'Sport d\'air', 'Sport de combat', 'Déguisement', 'Pantalon', 'Jupe', 'Robe', 'Costume', 'Manteau', 'Chemises stylées en sac', 'Cravate', 'Autre'], :to_s, :to_s, prompt: 'Sélectionner une catégorie' %>
+  <% end %>
+  <%= form.input :sexe, label: "Genre" do %>
+    <%= form.collection_select :sexe, ['Homme', 'Femme', 'Enfant', 'Ne préfere pas le dire'], :to_s, :to_s, prompt: 'Sélectionner un genre' %>
   <% end %>
   <%= form.input :couleurs do %>
-    <%= form.collection_select :couleurs, %w[Rouge Bleu Jaune Vert Blanc Noir Gris Orange Violet Marron], :to_s, :to_s, prompt: 'Sélectionner une couleur' %>
+    <%= form.collection_select :couleurs, %w[Rouge Bleu Jaune Vert Blanc Noir Gris Orange Violet Marron Autre], :to_s, :to_s, prompt: 'Sélectionner une couleur' %>
   <% end %>
-  <%= form.input :textile_type do %>
-    <%= form.collection_select :textile_type, %w[Laine Coton Soie Lin Synthétique Autre1 Autre2 Autre3], :to_s, :to_s, prompt: 'Sélectionner un type de textile' %>
+  <%= form.input :textile_type, label: "Matière" do %>
+    <%= form.collection_select :textile_type, %w[Laine Coton Soie Lin Synthétique Plastique Acier Autre], :to_s, :to_s, prompt: 'Sélectionner un type de textile' %>
   <% end %>
-  <%= form.input :size do %>
-    <%= form.collection_select :size, %w[XS S M L XL XXL XXXL], :to_s, :to_s, prompt: 'Sélectionner une taille' %>
+  <%= form.input :size, label: "Taille" do %>
+    <%= form.collection_select :size, %w[XXXS XXS XS S M L XL XXL XXXL], :to_s, :to_s, prompt: 'Sélectionner une taille' %>
   <% end %>
-  <%= form.input :price %>
-  <%= form.input :title %>
+  <%= form.input :price, label: "Prix" %>
+  <%= form.input :title, label: "Titre" %>
   <%= form.input :description %>
-  <%= form.input :availability, as: :boolean %>
+  <%= form.input :availability, label: "Disponible", as: :boolean %>
   <%= form.input :image, as: :file %>
   <%= form.button :submit, "Ajouter le produit" %>
 <% end %>
