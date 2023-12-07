@@ -1,0 +1,29 @@
+<div class="cards">
+  <% @products.each do |product| %>
+    <%= link_to product_path(product) do %>
+      <!-- Début de la carte (card) pour chaque produit -->
+      <div class="card">
+        <!-- Icône de favori -->
+        <i class="fa-solid fa-heart favorite-icon favorite-active"></i>
+
+        <% if product.image.nil? %>
+          <%# # Si l'image du produit est manquante, attribuez une image de remplacement (placeholder) --> %>
+          <% product.image = "placeholder.jpg" %>
+          <%= image_tag(product.image, alt: product.title) %>
+        <% else %>
+          <!-- Afficher l'image du produit avec un attribut alt -->
+          <%= image_tag(product.image, alt: product.title) %>
+        <% end %>
+
+        <!-- Informations du produit -->
+        <div class="card-info">
+          <!-- Titre du produit -->
+          <h2><%= product.title %></h2>
+          <!-- Description du produit -->
+          <p class="description"><%= product.description %></p>
+        </div>
+      </div>
+      <!-- Fin de la carte (card) pour chaque produit -->
+    <% end %>
+  <% end %>
+</div>

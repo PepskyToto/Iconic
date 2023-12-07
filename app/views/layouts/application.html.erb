@@ -17,7 +17,7 @@
   <body>
     <%= render "layouts/navbar" %>
 
-  <article data-controller="toggle">
+  <%# <article data-controller="toggle">
    <div class="row">
   <div class="col">
     <input type="button" class="btn-check" name="btnradio" id="btnradio1" data-action="click->toggle#fire" autocomplete="off" checked>
@@ -30,15 +30,307 @@
   <div class="col">
     <input type="button" class="btn-check" name="btnradio" id="btnradio3" data-action="click->toggle#fire3" autocomplete="off">
     <label class="btn btn-outline-primary w-100" for="btnradio3">Enfant</label>
-  </div>
-  <div class="col">
-    <input type="button" class="btn-check" name="btnradio" id="btnradio4" data-action="click->toggle#fire4" autocomplete="off">
-    <label class="btn btn-outline-primary w-100" for="btnradio4">Déguisements</label>
-  </div>
+   </div>
+     </div> %>
+<%#
+<div id="dropdown1">
+  <button class="btn btn-secondary bg-primary dropdown-toggle" type="button" id="dropdownToggle" data-bs-toggle="dropdown" aria-expanded="false" >
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownToggle">
+    <li><input type="radio" name="options">Option 1</li>
+    <li><input type="radio" name="options">Option 2</li>
+    <!-- Ajoutez les autres options de votre choix ici -->
+  </ul>
+</div> %>
 
+<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+  Femmes
+</button>
 
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+         Vêtements
+        </th>
+        <th>
+          Taille
+        </th>
+        <th>
+          Couleurs
+        </th>
+        <th>
+          Matière
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <input type="radio" name="Vetement">Robe de soirée
+        </td>
+        <td>
+          <input type="radio" name="Taille">XS
+        </td>
+        <td>
+          <input type="radio" name="Couleurs">Bleu
+        </td>
+        <td>
+          <input type="radio" name="Matières">Soie
+        </td>
+      </tr>
+         <td>
+          <input type="radio" name="Vetement">Robe d'été
+        </td>
+        <td>
+          <input type="radio" name="Taille">S
+        </td>
+        <td>
+          <input type="radio" name="Couleurs">Noire
+        </td>
+        <td>
+          <input type="radio" name="Matières">Bio
+        </td>
+      </tr>
+        </tr>
+         <td>
+          <input type="radio" name="Vetement">Robe de marriage
+        </td>
+        <td>
+          <input type="radio" name="Taille">M
+        </td>
+        <td>
+          <input type="radio" name="Couleurs">Rouge
+        </td>
+        <td>
+          <input type="radio" name="Matières">Coton
+        </td>
+      </tr>
+        </tr>
+         <td>
+          <input type="radio" name="Vetement">Combinaison ski
+        </td>
+        <td>
+          <input type="radio" name="Taille">L
+        </td>
+        <td>
+          <input type="radio" name="Couleurs">Jaune
+        </td>
+        <td>
+          <input type="radio" name="Matières">Laine
+        </td>
+      </tr>
+        </tr>
+         <td>
+          <input type="radio" name="Vetement">Déguisement
+        </td>
+        <td>
+          <input type="radio" name="Taille">XL
+        </td>
+        <td>
+          <input type="radio" name="Couleurs">Blanc
+        </td>
+        <td>
+          <input type="radio" name="Matières">Cuir
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<div id="tableContainer">
+
+
+<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+  Hommes
+</button>
+<%# aurore =crapo %>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <table class="table2">
+    <thead>
+      <tr>
+        <th>
+         Vêtements
+        </th>
+        <th>
+          Taille
+        </th>
+        <th>
+          Couleurs
+        </th>
+        <th>
+          Matière
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <input type="radio" name="Vetement">Chemise
+        <td>
+          <input type="radio" name="Taille">XS
+        </td>
+        <td>
+          <input type="radio" name="Couleurs">Bleu
+        </td>
+        <td>
+          <input type="radio" name="Matières">Soie
+        </td>
+      </tr>
+         <td>
+          <input type="radio" name="Vetement">Costume d'été
+        </td>
+        <td>
+          <input type="radio" name="Taille">S
+        </td>
+        <td>
+          <input type="radio" name="Couleurs">Noire
+        </td>
+        <td>
+          <input type="radio" name="Matières">Bio
+        </td>
+      </tr>
+        </tr>
+         <td>
+          <input type="radio" name="Vetement">Costume de marriage
+        </td>
+        <td>
+          <input type="radio" name="Taille">M
+        </td>
+        <td>
+          <input type="radio" name="Couleurs">Rouge
+        </td>
+        <td>
+          <input type="radio" name="Matières">Coton
+        </td>
+      </tr>
+        </tr>
+         <td>
+          <input type="radio" name="Vetement">Combinaison ski
+        </td>
+        <td>
+          <input type="radio" name="Taille">L
+        </td>
+        <td>
+          <input type="radio" name="Couleurs">Jaune
+        </td>
+        <td>
+          <input type="radio" name="Matières">Laine
+        </td>
+      </tr>
+        </tr>
+         <td>
+          <input type="radio" name="Vetement">Déguisement
+        </td>
+        <td>
+          <input type="radio" name="Taille">XL
+        </td>
+        <td>
+          <input type="radio" name="Couleurs">Blanc
+        </td>
+        <td>
+          <input type="radio" name="Matières">Cuir
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+  Enfants
+</button>
+
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <table class="table3">
+    <thead>
+      <tr>
+        <th>
+         Vêtements
+        </th>
+        <th>
+          Taille
+        </th>
+        <th>
+          Couleurs
+        </th>
+        <th>
+          Matière
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <input type="radio" name="Vetement">Tenu de soirée
+        <td>
+          <input type="radio" name="Taille">6-12 mois
+        </td>
+        <td>
+          <input type="radio" name="Couleurs">Bleu
+        </td>
+        <td>
+          <input type="radio" name="Matières">Soie
+        </td>
+      </tr>
+         <td>
+          <input type="radio" name="Vetement">Costume d'été
+        </td>
+        <td>
+          <input type="radio" name="Taille">2-4 ans
+        </td>
+        <td>
+          <input type="radio" name="Couleurs">Noire
+        </td>
+        <td>
+          <input type="radio" name="Matières">Bio
+        </td>
+      </tr>
+        </tr>
+         <td>
+          <input type="radio" name="Vetement">Costume de marriage
+        </td>
+        <td>
+          <input type="radio" name="Taille">M
+        </td>
+        <td>
+          <input type="radio" name="Couleurs">6-8ans
+        </td>
+        <td>
+          <input type="radio" name="Matières">Coton
+        </td>
+      </tr>
+        </tr>
+         <td>
+          <input type="radio" name="Vetement">Combinaison ski
+        </td>
+        <td>
+          <input type="radio" name="Taille">L
+        </td>
+        <td>
+          <input type="radio" name="Couleurs">10-12 ans
+        </td>
+        <td>
+          <input type="radio" name="Matières">Laine
+        </td>
+      </tr>
+        </tr>
+         <td>
+          <input type="radio" name="Vetement">Déguisement
+        </td>
+        <td>
+          <input type="radio" name="Taille">14-16 ans
+        </td>
+        <td>
+          <input type="radio" name="Couleurs">Blanc
+        </td>
+        <td>
+          <input type="radio" name="Matières">Cuir
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<%# <div id="tableContainer">
 <table id="myTable" data-toggle-target="myTable" class="d-none">
   <tr>
     <th>Produits</th>
@@ -79,8 +371,8 @@
 </table>
 
 
-</div>
-<div id="tableContainer2">
+</div> %>
+<%# <div id="tableContainer2">
     <table id="myTable2" data-toggle-target="myTable2" class="d-none">
   <tr>
     <th>Produits</th>
@@ -160,9 +452,9 @@
     <td><input type="checkbox">Polyester</td>
   </tr>
 </table>
-</div>
+</div> %>
 
-<div id="tableContainer4">
+<%# <div id="tableContainer4">
     <table id="myTable4" data-toggle-target="myTable4" class="d-none">
   <tr>
     <th>Produits</th>
@@ -201,7 +493,7 @@
     <td><input type="checkbox">Polyester</td>
   </tr>
 </table>
-</div>
+</div> %>
 </article>
 
 <br>

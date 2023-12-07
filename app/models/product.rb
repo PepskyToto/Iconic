@@ -4,6 +4,9 @@ class Product < ApplicationRecord
   has_many :bookings
   has_many :reviews
 
+  validates :sexe, presence: true
+  validates :couleurs, presence: true
+  validates :textile_type, presence: true
   validates :category, presence: true
   validates :size, presence: true
   validates :price, presence: true

@@ -1,10 +1,25 @@
 <%= simple_form_for @booking do |form| %>
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="text-center d-flex justify-content-center">
 <%= form.input :start_date, label: "Début de la location",
             as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
+            input_html: { data: { controller: "datepicker" }, class: "field_style", } %>
+                  </div>
+    </div>
+    <div class="col-6">
 <%= form.input :end_date, label: "Fin de la location",
             as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
+            input_html: { data: { controller: "datepicker" }, class: "field_style", } %>
+            </div>
+            </div>
 <%= form.hidden_field :product_id, value: params[:id] %>
-<%= form.button :submit, "Réserver", class: "resa-button" %>
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="text-center d-flex justify-content-center">
+  <%= form.button :submit, "Réserver", class: "resa-button" %>
+      </div>
+    </div>
+  </div>
+
 <% end %>
