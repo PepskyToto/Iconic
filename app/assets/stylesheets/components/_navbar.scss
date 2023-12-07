@@ -10,3 +10,38 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.icon{
+  color: rgb(223, 166, 123);
+}
+
+.icon-text {
+  color: rgb(223, 166, 123);
+}
+
+// .search-btn-navbar {
+//   color: rgb(223, 166, 123);
+// }
+
+.navbar-brand {
+  font-size: 30px;
+}
+
+/* Styles personnalisés pour le bouton de recherche */
+.search-btn-navbar {
+  border: 2px solid  rgb(223, 166, 123); /* Couleur de contour rose pâle */
+  border-radius: 5px; /* Petit rayon pour les coins */
+  background-color: transparent; /* Fond transparent */
+  color:  rgb(223, 166, 123); /* Couleur du texte rose pâle */
+  transition: background-color 0.3s, color 0.3s; /* Transition des couleurs */
+}
+
+.search-btn-navbar:hover {
+  background-color:  rgb(223, 166, 123); /* Couleur de fond rose pâle au survol */
+  color: #fff; /* Couleur du texte en blanc au survol */
+}
+
+/* Style pour le texte "Rechercher" à l'intérieur du bouton */
+.search-btn-navbar .search-icon {
+  padding: 0 10px; /* Espacement interne du texte */
+}
