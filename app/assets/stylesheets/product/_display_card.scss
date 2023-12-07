@@ -24,11 +24,15 @@ input[type="checkbox"] {
   top: 10px; /* Ajustez cette valeur pour le positionnement vertical */
   right: 10px; /* Ajustez cette valeur pour le positionnement horizontal */
   font-size: 24px; /* Ajustez la taille de l'icône selon vos besoins */
-  color: red; /* Changez la couleur de l'icône si nécessaire */
+  color: rgb(243, 212, 212);
 }
 
-#test{
-  color: red;
+.favorite-active {
+  color:rgba(159, 10, 10, 0.596)
+}
+
+.favorite-button {
+  border: none;
 }
 
 .card {
