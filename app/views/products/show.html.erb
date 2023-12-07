@@ -41,6 +41,7 @@
       <h3><%= @product.price %>€ par jour</h3>
       <h5>Ceci est votre article.</h5>
               <%= link_to "Modifier", edit_product_path(@product), class: "resa-button" %>
+              <%= link_to 'Supprimer', delete_product_path(@product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "resa-button" %>
         </div>
     <% else %>
       <div class = "col-6 reservation-box">
