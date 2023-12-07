@@ -1,6 +1,13 @@
 class BookmarksController < ApplicationController
   def index
     @bookmarks = Bookmark.all
+
+    # Obtenez les IDs des produits mis en favori par l'utilisateur
+    product_ids = @bookmarks
+    .pluck(:product_id)
+  
+    # Sélectionnez tous les produits associés aux IDs récupérés
+    @products = Product.where(id: product_ids)
   end
 
   def new

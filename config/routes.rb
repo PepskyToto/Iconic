@@ -11,13 +11,15 @@ Rails.application.routes.draw do
   root to: "products#index"
   resources :products, only: [:destroy], as: :delete_products
   resources :products, except: [:destroy] do
-    resources :bookmarks, only: [:new, :create, :destroy] #maybe destroy?
-
+    resources :bookmarks, only: [:new, :create] #maybe destroy?
+    
   end
   resources :bookings, only: [:new, :create, :destroy, :edit, :index]
-
+  
   
   resources :users, only: [:index] do
     resources :reviews, only: [:new, :create]
+    resources :bookmarks, only: [:index]
+    resources :bookmarks, only: [:destroy], as: :delete_bookmarks
   end
 end
