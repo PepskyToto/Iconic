@@ -10,9 +10,9 @@ input[type="checkbox"] {
 .cards {
   display: flex;
   flex-wrap: wrap; /* Permet aux cartes de passer à la ligne lorsque l'espace est insuffisant */
-  justify-content: space-between; /* Espace entre les cartes et les bords de la fenêtre */
-  gap: 15px; /* Espacement horizontal entre les cartes */
-  padding: 30px; /* Espace entre les cartes et les bords de la fenêtre (margin) */
+  justify-content: center; /* Espace entre les cartes et les bords de la fenêtre */
+  gap: 5px; /* Espacement horizontal entre les cartes */
+  padding: 50px; /* Espace entre les cartes et les bords de la fenêtre (margin) */
 }
 
 .favorite-icon {
@@ -32,16 +32,16 @@ input[type="checkbox"] {
 }
 
 .card {
+  flex-basis: calc(25% - 15px);
   position: relative;
-  width: 200px; /* ou la largeur que vous préférez */
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 15px;
   border: none;
 }
 
 .card img {
-  width: 200px; /* Définissez la largeur et la hauteur appropriées */
-  height: 300px;
+  width: 100%; /* La largeur de l'image doit être de 100% pour remplir la largeur de la carte */
+  height: 100%; /* La hauteur de l'image doit être de 100% pour remplir la hauteur de la carte */
   object-fit: cover; /* Optionnel : ajustez la taille de l'image de fond */
   background-repeat: no-repeat; /* Optionnel : empêchez la répétition de l'image de fond */
   /* Autres styles CSS pour votre produit */
@@ -51,8 +51,8 @@ input[type="checkbox"] {
 .card-info {
   position: absolute;
   bottom: 0;
-  background: rgba(244, 176, 131, 0.596); /* Fond semi-transparent */
-  color: white;
+  background: rgba(244, 176, 131, 0.22); /* Fond semi-transparent */
+  color: rgb(255, 255, 255);
   width: 100%;
   transform: translateY(100%);
   transition: transform 0.3s ease-in-out;
@@ -65,6 +65,18 @@ input[type="checkbox"] {
 
 .description {
   display: none;
+  text-align: center;
+}
+
+.product-style{
+  text-align: center; 
+  font-size: 20px;
+}
+
+.size-style{
+  text-align: right;
+  font-size: 15px;
+  padding-right: 10px;
 }
 
 .card:hover .description {

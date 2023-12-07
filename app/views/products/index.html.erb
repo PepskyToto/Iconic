@@ -18,8 +18,9 @@
           <%= image_tag(product.image, alt: product.title) %>
         <% end %>
         <div class="card-info">
-          <h2><%= product.title %></h2>
+          <h2 class ="product-style"><%= product.title %></h2>
           <p class="description"><%= product.description %></p>
+          <p class = "size-style">Taille : <%= product.size %></p>
         </div>
       </div>
     <% end %>
