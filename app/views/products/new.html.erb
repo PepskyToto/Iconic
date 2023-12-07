@@ -3,7 +3,7 @@
     <%= form.collection_select :category, ['Sport de terre', 'Sport de mer', 'Sport d\'air', 'Sport de combat', 'Déguisement', 'Pantalon', 'Jupe', 'Robe', 'Costume', 'Manteau', 'Chemises stylées en sac', 'Cravate', 'Autre'], :to_s, :to_s, prompt: 'Sélectionner une catégorie' %>
   <% end %>
   <%= form.input :sexe, label: "Genre" do %>
-    <%= form.collection_select :sexe, ['Homme', 'Femme', 'Enfant', 'Ne préfere pas le dire'], :to_s, :to_s, prompt: 'Sélectionner un genre' %>
+    <%= form.collection_select :sexe, ['Homme', 'Femme', 'Enfant'], :to_s, :to_s, prompt: 'Sélectionner un genre' %>
   <% end %>
   <%= form.input :couleurs do %>
     <%= form.collection_select :couleurs, %w[Rouge Bleu Jaune Vert Blanc Noir Gris Orange Violet Marron Autre], :to_s, :to_s, prompt: 'Sélectionner une couleur' %>
