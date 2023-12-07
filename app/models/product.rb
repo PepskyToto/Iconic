@@ -23,6 +23,11 @@ class Product < ApplicationRecord
     tsearch: { prefix: true }
   }
 
+  scope :filter_by_sexe, ->(sexe) { where(sexe: sexe) if sexe.present? }
+  scope :filter_by_couleurs, ->(couleurs) { where(couleurs: couleurs) if couleurs.present? }
+  scope :filter_by_textile_type, ->(textile_type) { where(textile_type: textile_type) if textile_type.present? }
+
+
   private
 
   def set_default_availability

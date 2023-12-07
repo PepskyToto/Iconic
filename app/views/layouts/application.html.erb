@@ -47,6 +47,18 @@
   Femmes
 </button>
 
+<%= form_tag(products_path, method: :get) do %>
+  <%= select_tag :sexe, options_for_select(['Homme', 'Femme', 'Enfant'], params[:sexe]), include_blank: 'Sélectionner un sexe' %>
+  <%= select_tag :couleurs, options_for_select(['Rouge', 'Bleu', 'Jaune', 'Vert', 'Blanc', 'Noir', 'Gris', 'Orange', 'Violet', 'Marron'], params[:couleurs]), include_blank: 'Sélectionner une couleur' %>
+  <%= select_tag :textile_type, options_for_select(['Laine', 'Coton', 'Soie', 'Lin', 'Synthétique', 'Autre1', 'Autre2', 'Autre3'], params[:textile_type]), include_blank: 'Sélectionner un type de textile' %>
+  <%= submit_tag 'Filtrer' %>
+<% end %>
+
+<!-- Affichage des produits filtrés -->
+<% @products.each do |product| %>
+  <!-- Affichage des informations du produit -->
+<% end %>
+
 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
   <table class="table">
     <thead>
