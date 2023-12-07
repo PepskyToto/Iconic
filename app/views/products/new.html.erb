@@ -1,7 +1,19 @@
-<%= simple_form_for @product do |form| %>
-  <%= form.input :category, label: "Catégorie" do %>
-    <%= form.collection_select :category, ['Sport', 'Déguisement', 'Pantalon', 'Jupe', 'Robe', 'Costume', 'Manteau', 'Autre'], :to_s, :to_s, prompt: 'Sélectionner une catégorie' %>
+<div id="edit_container" class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="text-center">
+        <%= simple_form_for @product, html: { class: "mt-3" } do |form| %>
+          <div class="row">
+            <%= form.input :category, label: "Catégorie" do %>
+                <%= form.collection_select :category, ['Sport', 'Déguisement', 'Pantalon', 'Jupe', 'Robe', 'Costume', 'Manteau', 'Autre'], :to_s, :to_s, prompt: 'Sélectionner une catégorie' %>
   <% end %>
+            <%= form.input :size, label: "Taille" do %>
+              <%= form.collection_select :size, %w[XS S M L XL XXL XXXL], :to_s, :to_s, prompt: 'Sélectionner une taille' %>
+            <% end %>
+            <%= form.input :price, label: "Prix" %>
+            <%= form.input :title, label: "Titre" %>
+            <%= form.input :description, label: "Description" %>
+              
   <%= form.input :sexe, label: "Genre" do %>
     <%= form.collection_select :sexe, ['Homme', 'Femme', 'Enfant'], :to_s, :to_s, prompt: 'Sélectionner un genre' %>
   <% end %>
@@ -11,13 +23,12 @@
   <%= form.input :textile_type, label: "Matière" do %>
     <%= form.collection_select :textile_type, %w[Laine Coton Soie Lin Synthétique Plastique Acier Autre], :to_s, :to_s, prompt: 'Sélectionner un type de textile' %>
   <% end %>
-  <%= form.input :size, label: "Taille" do %>
-    <%= form.collection_select :size, %w[XXS XS S M L XL XXL XXXL], :to_s, :to_s, prompt: 'Sélectionner une taille' %>
-  <% end %>
-  <%= form.input :price, label: "Prix" %>
-  <%= form.input :title, label: "Titre" %>
-  <%= form.input :description %>
-  <%= form.input :availability, label: "Disponible", as: :boolean %>
-  <%= form.input :image, as: :file %>
-  <%= form.button :submit, "Ajouter le produit" %>
-<% end %>
+            <div class="col-12">
+              <%= form.button :submit, "Ajouter votre produit", class: "resa-button" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
