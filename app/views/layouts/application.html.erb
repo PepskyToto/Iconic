@@ -16,6 +16,7 @@
 
   <body>
     <%= render "layouts/navbar" %>
+    <%= render "layouts/navbar2" %>
 
   <%# <article data-controller="toggle">
    <div class="row">
@@ -43,9 +44,6 @@
   </ul>
 </div> %>
 
-<button class="btn-category dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-  Femmes
-</button>
 
 <%= form_tag(products_path, method: :get) do %>
   <%= select_tag :sexe, options_for_select(['Homme', 'Femme', 'Enfant'], params[:sexe]), include_blank: 'Sélectionner un sexe' %>
@@ -53,6 +51,9 @@
   <%= select_tag :textile_type, options_for_select(['Laine', 'Coton', 'Soie', 'Lin', 'Synthétique', 'Autre1', 'Autre2', 'Autre3'], params[:textile_type]), include_blank: 'Sélectionner un type de textile' %>
   <%= submit_tag 'Filtrer' %>
 <% end %>
+<button class="btn-category dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+  Femmes
+</button>
 
 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
   <table class="table">
@@ -633,10 +634,10 @@
 
 <br>
 <br>
-    <%= yield %>
+    <%= yield%>
     </main>
   </body>
-  <footer>
+  <footer class = "mt-5">
 <div class="footer">
   <div class="footer-links">
     <div class="caca">

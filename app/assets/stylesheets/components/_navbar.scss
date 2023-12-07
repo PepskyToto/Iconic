@@ -17,14 +17,18 @@
 
 .icon-text {
   color: rgb(223, 166, 123);
+  font-size: 15px;
 }
 
+.icone-style{
+  padding-right: 4px;
+}
 // .search-btn-navbar {
 //   color: rgb(223, 166, 123);
 // }
 
 .navbar-brand {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 /* Styles personnalisés pour le bouton de recherche */
@@ -33,7 +37,7 @@
   border-radius: 5px; /* Petit rayon pour les coins */
   background-color: transparent; /* Fond transparent */
   color:  rgb(223, 166, 123); /* Couleur du texte rose pâle */
-  transition: background-color 0.3s, color 0.3s; /* Transition des couleurs */
+  transition: background-color 0.5s, color 0.5s; /* Transition des couleurs */
 }
 
 .search-btn-navbar:hover {
@@ -44,4 +48,10 @@
 /* Style pour le texte "Rechercher" à l'intérieur du bouton */
 .search-btn-navbar .search-icon {
   padding: 0 10px; /* Espacement interne du texte */
+}
+
+.devise_decorations{
+  text-decoration: none;
+  color: #7d7d7d;
+  font-size: 15px;
 }
