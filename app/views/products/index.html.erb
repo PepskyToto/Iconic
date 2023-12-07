@@ -3,13 +3,16 @@
 <div class = "test">
 <h2 class = "p-2">Toutes les annonces</h2>
 </div>
-<h2 id="test">test</h2>
+
 
 <div class="cards">
   <% @products.each do |product| %>
   <%= link_to product_path(product) do %>
     <div class="card">
-      <i class="fa-solid fa-heart favorite-icon"></i>
+
+      <%# <%= link_to user_session_path, class:"favorite-button", data: {controller: "favorite"} data: {action: "favorite#toggleFavorite" }> %>
+      <i class="fa-solid fa-heart favorite-icon" data-target="favorite.icon">  </i>
+
       <% if product.image.nil? %>
       <% product.image = "placeholder.jpg" %>
       <%= image_tag(product.image, alt: product.title) %>
@@ -29,4 +32,3 @@
 <% if current_user %>
   <%= link_to "Ajouter un nouveau produit", new_product_path %>
 <% end %>
-
