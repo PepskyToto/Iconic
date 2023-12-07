@@ -1,0 +1,28 @@
+<h1>My Bookings</h1>
+
+<% if @bookings.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Status</th>
+        <!-- Ajoutez d'autres colonnes en fonction de vos besoins -->
+      </tr>
+    </thead>
+    <tbody>
+      <% @bookings.each do |booking| %>
+        <tr>
+          <td><%= booking.product.title %></td>
+          <td><%= booking.start_date %></td>
+          <td><%= booking.end_date %></td>
+          <td><%= booking.status ? 'Active' : 'Inactive' %></td>
+          <!-- Ajoutez d'autres colonnes en fonction de vos besoins -->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No bookings found.</p>
+<% end %>
