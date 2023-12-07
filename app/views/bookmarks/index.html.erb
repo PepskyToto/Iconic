@@ -1,0 +1,18 @@
+  <% @products.each do |product| %>
+  <%= link_to product_path(product) do %>
+    <div class="card">
+      <i class="fa-solid fa-heart favorite-icon"></i>
+      <% if product.image.nil? %>
+      <% product.image = "placeholder.jpg" %>
+      <%= image_tag(product.image, alt: product.title) %>
+      <% else %>
+        <%= image_tag(product.image, alt: product.title) %>
+      <% end %>
+      <div class="card-info">
+        <h2><%= product.title %></h2>
+        <p class="description"><%= product.description %></p>
+      </div>
+    </div>
+  <% end %>
+  <% end %>
+</div>

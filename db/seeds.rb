@@ -12,6 +12,7 @@ def random_price
 end
 
 puts "cleaning database"
+Bookmark.destroy_all
 Booking.destroy_all
 Product.destroy_all
 User.destroy_all
