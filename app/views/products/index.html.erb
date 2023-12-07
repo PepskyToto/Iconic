@@ -1,6 +1,6 @@
 
 <h6 class = "p-2 text-center">Toutes les annonces</h6>
-<div class="cards">
+<div class="cards colored-border-top">
   <% @products.each do |product| %>
       <div class="card">
         <%= link_to product_bookmarks_path(product), data: { 'turbo-method'=> :post }, class: 'add-to-favorites-button' do %>

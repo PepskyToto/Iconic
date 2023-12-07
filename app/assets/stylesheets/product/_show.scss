@@ -15,6 +15,13 @@
   margin-bottom: 10px; /* Ajustez la marge inférieure selon vos besoins */
 }
 
+.colored-border-bottom-2 {
+  border-bottom: 2px solid #dddddd; /* Remplacez #000 par la couleur de votre choix */
+  margin-bottom: 10px; /* Ajustez la marge inférieure selon vos besoins */
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
 .reservation-box{
   background-color: #f3f1ed;
   border-radius: 20px;
@@ -22,6 +29,37 @@
   padding: 10px;
 }
 
+.dropdown-button{
+  border-radius: 20px;
+  text-decoration: none;
+  background-color: rgb(223, 188, 162);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.501), rgba(255,255,255,0));
+  padding: 10px 20px; /* Ajustez le rembourrage selon vos besoins */
+  color: #272727; /* Couleur du texte */
+  border: none; /* Supprimer la bordure si nécessaire */
+  cursor: pointer; /* Style du curseur au survol */
+  font-size: 16px;
+  transition: background-color 0.7s ease;
+  &:hover {
+    background-color: rgb(223, 166, 123)
+  }
+}
+
+.dropdown-button-2{
+  border-radius: 20px;
+  text-decoration: none;
+  background-color: rgb(223, 188, 162);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.501), rgba(255,255,255,0));
+  padding: 3px 20px; /* Ajustez le rembourrage selon vos besoins */
+  color: #272727; /* Couleur du texte */
+  border: none; /* Supprimer la bordure si nécessaire */
+  cursor: pointer; /* Style du curseur au survol */
+  font-size: 16px;
+  transition: background-color 0.7s ease;
+  &:hover {
+    background-color: rgb(223, 166, 123)
+  }
+}
 
 .resa-button{
   border-radius: 20px;
