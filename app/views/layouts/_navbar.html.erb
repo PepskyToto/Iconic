@@ -1,5 +1,12 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<!-- Navbar principale avec espaces en haut et en bas -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="padding-top: 30px; padding-bottom: 30px; padding-left: 30px; padding-right: 30px;">
   <div class="container-fluid">
+    <!-- Logo "Iconic" à gauche -->
+    <div class="navbar-brand">
+      <%= link_to "Iconic", root_path, class: "navbar-brand", aria: { current: "page" } %>
+    </div>
+
+    <!-- Bouton de basculement pour les écrans de petite taille -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -7,43 +14,64 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-  <%= link_to("#", class: "nav-link active", aria: { current: "page" }) do %>
-    <%= tag.i(class: "fa-solid fa-comments") %>
-  <% end %>
 
 </li>
 
+    <!-- Contenu de la navbar lorsqu'elle est déployée -->
+    <div class="collapse navbar-collapse ml-auto" id="navbarTogglerDemo03">
+      <ul class="navbar-nav">
 
-  <li class="nav-item">
-  <%= link_to new_product_path, class: "nav-link" do %>
-    <%= tag.i(class: "fa-solid fa-circle-plus") %>
-  <% end %>
-</li>
-    <%= link_to("Mes réservations", bookings_path, class: "nav-link active", aria: { current: "page" })%>
-    <% if current_user %>
-    <%= link_to("Mes favoris", user_bookmarks_path(current_user.id), class: "nav-link active", aria: { current: "page" })%>
-    <% end %>
+        <!-- Lienvers new product (Changement : Ajout du texte de description) -->
+        <li class="nav-item">
+          <%= link_to new_product_path, class: "nav-link" do %>
+            <%= tag.i(class: "fa-solid fa-circle-plus icon") %>
+            <span class="icon-text">Nouveau produit</span> <!-- Ajout du texte de description -->
+          <% end %>
+        </li>
+        <!-- Lien vers "Mes réservations" (Changement : Ajout du texte de description) -->
+        <li class="nav-item">
+          <%= link_to bookings_path, class: "nav-link active", aria: { current: "page" } do %>
+            <%= tag.i(class: "fa-solid fa-calendar icon") %>
+            <span class="icon-text">Mes réservations</span> <!-- Ajout du texte de description -->
+          <% end %>
+        </li>
+        <!-- Lien vers "Mes favoris" (si l'utilisateur est connecté) (Changement : Ajout du texte de description) -->
+        <% if current_user %>
+          <li class="nav-item">
+            <%= link_to user_bookmarks_path(current_user.id), class: "nav-link active", aria: { current: "page" } do%>
+              <%= tag.i(class: "fa-solid fa-heart icon") %>
+              <span class="icon-text">Mes favoris</span> <!-- Ajout du texte de description -->
+            <% end %>
+          </li>
+        <% end %>
       </ul>
-        <nav>
-        <ul class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
-          </a>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+      <!-- Barre de recherche centrée -->
+      <form class="d-flex mx-auto" role="search" method="get" action="<%= root_path %>">
+        <input class="form-control me-2" type="search" name="query" placeholder="Rechercher" aria-label="Rechercher">
+        <button class="btn btn-outline search-btn-navbar" type="submit">Rechercher</button>
+      </form>
+
+      <!-- Menu déroulant à droite (Changement : Correction de la structure HTML) -->
+      <div class="nav-item dropdown ml-auto">
+        <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+        </a>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <% if user_signed_in? %>
+            <!-- Nom d'utilisateur (si connecté) -->
             <ul><%= current_user.username %></ul>
-            <ul><%= link_to 'Se déconnecter', destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></ul>
+            <!-- Lien de déconnexion (si connecté) -->
+            <ul><%= link_to 'Se déconnecter', destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></ul>
           <% else %>
+            <!-- Lien de connexion (si non connecté) -->
             <%= link_to 'Se connecter', new_user_session_path %>
           <% end %>
-          </div>
-        </ul>
-      </nav>
-      <form class="d-flex" role="search" method="get" action="<%= root_path %>">
-        <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
+
+<!-- Rendu des messages flash -->
 <%= render "shared/flashes" %>
