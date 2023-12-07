@@ -13,6 +13,13 @@ class Product < ApplicationRecord
 
   after_initialize :set_default_availability
 
+  include PgSearch::Model
+  pg_search_scope :search_by_title_and_description,
+  against: [ :title, :description ],
+  using: {
+    tsearch: { prefix: true }
+  }
+
   private
 
   def set_default_availability
