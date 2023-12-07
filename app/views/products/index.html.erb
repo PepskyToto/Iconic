@@ -1,33 +1,25 @@
 
-<%= link_to "Add a new product", new_product_path, class: "btn btn-primary" %>
-<div class = "test">
 <h2 class = "p-2">Toutes les annonces</h2>
-</div>
-
-
 <div class="cards">
   <% @products.each do |product| %>
-  <%= link_to product_path(product) do %>
-    <div class="card">
-
-      <%# <%= link_to user_session_path, class:"favorite-button", data: {controller: "favorite"} data: {action: "favorite#toggleFavorite" }> %>
-      <i class="fa-solid fa-heart favorite-icon" data-target="favorite.icon">  </i>
-
-      <% if product.image.nil? %>
-      <% product.image = "placeholder.jpg" %>
-      <%= image_tag(product.image, alt: product.title) %>
-      <% else %>
-        <%= image_tag(product.image, alt: product.title) %>
-      <% end %>
-      <div class="card-info">
-        <h2><%= product.title %></h2>
-        <p class="description"><%= product.description %></p>
+        <%= button_to 'Add to Favorites', product_bookmarks_path(product), method: :post, class: 'add-to-favorites-button' %>
+    <%= link_to product_path(product) do %>
+      <div class="card">
+        <i class="fa-solid fa-heart favorite-icon"></i>
+        <% if product.image.nil? %>
+          <% product.image = "placeholder.jpg" %>
+          <%= image_tag(product.image, alt: product.title) %>
+        <% else %>
+          <%= image_tag(product.image, alt: product.title) %>
+        <% end %>
+        <div class="card-info">
+          <h2><%= product.title %></h2>
+          <p class="description"><%= product.description %></p>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
   <% end %>
 </div>
-
 
 <% if current_user %>
   <%= link_to "Ajouter un nouveau produit", new_product_path %>
