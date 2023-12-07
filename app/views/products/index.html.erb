@@ -2,9 +2,7 @@
 <h6 class = "p-2 text-center">Toutes les annonces</h6>
 <div class="cards">
   <% @products.each do |product| %>
-    <%= link_to product_path(product) do %>
       <div class="card">
-
         <%= link_to product_bookmarks_path(product), data: { 'turbo-method'=> :post }, class: 'add-to-favorites-button' do %>
           <% if product.bookmarks.where(user: current_user).exists? %>
             <i class="fa-solid fa-heart favorite-icon favorite-active"></i>
@@ -12,6 +10,7 @@
             <i class="fa-solid fa-heart favorite-icon"></i>
             <% end %>
         <% end %>
+    <%= link_to product_path(product) do %>
         <% if product.image.nil? %>
           <% product.image = "placeholder.jpg" %>
           <%= image_tag(product.image, alt: product.title) %>

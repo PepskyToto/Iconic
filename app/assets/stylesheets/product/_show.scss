@@ -1,10 +1,13 @@
 #main_container{
-  background-color: #F6F1E9;
+  background-color: #f3f1ed;
   border-radius: 20px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;}
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  
+}
 
 .product_images{
   border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
 .colored-border-bottom {
@@ -13,9 +16,10 @@
 }
 
 .reservation-box{
-  background-color: #F6F1E9;
+  background-color: #f3f1ed;
   border-radius: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 10px;
 }
 
 
@@ -38,7 +42,7 @@
 .delete-button{
   border-radius: 20px;
   text-decoration: none;
-  background-color: #ffac8b;
+  background-color: #FCF1B7;
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.501), rgba(255,255,255,0));
   padding: 10px 20px; /* Ajustez le rembourrage selon vos besoins */
   color: #272727; /* Couleur du texte */
@@ -47,8 +51,18 @@
   font-size: 16px;
   transition: background-color 0.7s ease;
   &:hover {
-    background-color: #efdf87
+    background-color: rgb(255, 196, 188)
   }
+}
+
+#booking_start_date{
+  border-radius: 15px;
+  color: #a9a9a9;
+}
+
+#booking_end_date{
+  border-radius: 15px;
+  color: #a9a9a9;
 }
 // .resa-button{
 //   border-radius: 20px;
