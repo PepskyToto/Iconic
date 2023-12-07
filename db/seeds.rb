@@ -36,6 +36,9 @@ sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
     title: Faker::Lorem.words(number: 3).join(' '), # Utilisation de Faker pour générer un titre aléatoire
     description: Faker::Lorem.sentence,
     availability: [true, false].sample,
+    sexe: ["femme", "homme", "enfant"].sample,
+    textile_type: ["coton", "soie", "lin", "laine"].sample,
+    couleurs: ["rouge","bleu"].sample,
     image: images.sample,
   )
 end
