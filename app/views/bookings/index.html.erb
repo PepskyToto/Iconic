@@ -1,24 +1,24 @@
-<h1>My Bookings</h1>
+<h1>Mes Réservations</h1>
 
 <% if @bookings.any? %>
   <table>
     <thead>
       <tr>
-        <th>Product</th>
-        <th>Start Date</th>
-        <th>End Date</th>
-        <th>Status</th>
-        <!-- Ajoutez d'autres colonnes en fonction de vos besoins -->
+        <th>Produit</th>
+        <th>Aperçu</th>
+        <th>Début de la location</th>
+        <th>Fin de la location</th>
+        <th>Statut</th>
       </tr>
     </thead>
     <tbody>
       <% @bookings.each do |booking| %>
         <tr>
           <td><%= booking.product.title %></td>
+          <td><%= image_tag(booking.product.image, alt: booking.product.title) %></td>
           <td><%= booking.start_date %></td>
           <td><%= booking.end_date %></td>
           <td><%= booking.status ? 'Active' : 'Inactive' %></td>
-          <!-- Ajoutez d'autres colonnes en fonction de vos besoins -->
         </tr>
       <% end %>
     </tbody>
