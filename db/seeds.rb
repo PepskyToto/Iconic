@@ -22,12 +22,12 @@ puts "generating User"
 User.create(username: "jf_vt", email: "jfvernet@icloud.com", password: "azerty")
 
 # Tableau de catégories possibles
-categories = ["robe de mariée", "pantalon", "pull", "costumes"]
+categories = ['Sport', 'Déguisement', 'Pantalon', 'Jupe', 'Robe', 'Costume', 'Manteau', 'Autre']
 
 images = ["https://images.asos-media.com/products/asos-design-robe-longue-asymetrique-a-sequins-argentes-noir/204472339-2?$n_320w$&wid=317&fit=constrain", "https://images.asos-media.com/products/amy-lynn-mimi-robe-courte-a-sequins-circulaires-style-festival-arc-en-ciel/204073306-2?$n_320w$&wid=317&fit=constrain", "https://images.asos-media.com/products/bershka-robe-courte-bandeau-a-volants-et-sequins-argent/205785069-2?$n_320w$&wid=317&fit=constrain", "https://images.asos-media.com/products/amy-jane-london-aurelia-robe-longue-en-tulle-a-sequins-noir/204842594-2?$n_320w$&wid=317&fit=constrain", "https://images.asos-media.com/products/labelrail-x-dyspnea-robe-longue-drapee-a-sequins-violet/205509680-2?$n_320w$&wid=317&fit=constrain"]
-sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
+sizes = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
 
-20.times do
+40.times do
   Product.create!(
     user_id: User.first.id, # Rempl
     category: categories.sample,
@@ -36,9 +36,9 @@ sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
     title: Faker::Lorem.words(number: 3).join(' '), # Utilisation de Faker pour générer un titre aléatoire
     description: Faker::Lorem.sentence,
     availability: [true, false].sample,
-    sexe: ["femme", "homme", "enfant"].sample,
-    textile_type: ["coton", "soie", "lin", "laine"].sample,
-    couleurs: ["rouge","bleu","jaune"].sample,
+    sexe: ["Femme", "Homme", "Enfant"].sample,
+    textile_type: ['Laine', 'Coton', 'Soie', 'Lin', 'Synthétique', 'Plastique', 'Acier', 'Autre'].sample,
+    couleurs: ["rouge", "bleu", "jaune", "Vert", "Blanc", "Noir", "Gris", "Autre"].sample,
     image: images.sample,
   )
 end

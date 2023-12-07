@@ -6,6 +6,9 @@ class ProductsController < ApplicationController
       @products = Product.search_by_title_and_description(params[:query])
     else
       @products = Product.all
+      @products = @products.filter_by_sexe(params[:sexe]) if params[:sexe].present?
+      @products = @products.filter_by_couleurs(params[:couleurs]) if params[:couleurs].present?
+      @products = @products.filter_by_textile_type(params[:textile_type]) if params[:textile_type].present?
     end
   end
 
@@ -61,7 +64,7 @@ class ProductsController < ApplicationController
   private
 
   def set_params
-    params.require(:product).permit(:title, :category, :size, :price, :description, :availability, :user_id, :sexe, :couleurs, :textile_type)
+    params.require(:product).permit(:title, :category, :size, :price, :description, :availability, :user_id, :couleurs, :sexe, :textile_type,)
   end
 
 end
