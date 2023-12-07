@@ -32,9 +32,6 @@
     <div class = "col-6">
       <h1 class="pb-3 colored-border-bottom"><%= @product.title %></h1>
       <p><%= @product.description %></p>
-      <% if current_user && current_user.id == @product.user_id%>
-
-      <% end %>
     </div>
     <% if current_user && current_user.id == @product.user_id %>
         <div class = "col-6 reservation-box">
