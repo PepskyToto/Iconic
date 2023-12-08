@@ -131,9 +131,9 @@ images_autre_enfant = [
   'https://images.asos-media.com/products/ginger-ray-calendrier-de-lavent-avec-petites-chaussettes/202794706-2?$n_320w$&wid=317&fit=constrain'
 ]
 images_sport_enfant = [
-'https://www.petit-bateau.fr/dw/image/v2/BCKL_PRD/on/demandware.static/-/Sites-PB_master/default/dwa8a54522/PB/A081303J1.jpg?sw=700&sh=358&sm=fit',
-'https://www.petit-bateau.fr/dw/image/v2/BCKL_PRD/on/demandware.static/-/Sites-PB_master/default/dw6d731ada/PB/A084N02J1.jpg?sw=700&sh=358&sm=fit'
+  "https://media.intersport.fr/is/image/intersportfr/40427__R9G_Q1?$produit_l$&$product_grey$"
 ]
+
 # Tableaux de genre (sexe) et de types
 genres = ['Femme', 'Homme', 'Enfant']
 sizes = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
