@@ -1,25 +1,18 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+# seeds.rb
+
 def random_price
   rand(50..500)
 end
 
-puts "cleaning database"
+puts "Cleaning database"
 Bookmark.destroy_all
 Booking.destroy_all
 Product.destroy_all
 User.destroy_all
 
-
-puts "generating User"
+puts "Generating User"
 User.create(username: "jf_vt", email: "jfvernet@icloud.com", password: "azerty")
+User.create(username: "Super-Toto", email: "toto@gmail.com", password: "123456")
 
 # Tableau de catégories possibles
 # categories = ['Sport', 'Déguisement', 'Pantalon', 'Jupe', 'Robe', 'Costume', 'Manteau', 'Autre']
@@ -52,6 +45,7 @@ User.create(username: "jf_vt", email: "jfvernet@icloud.com", password: "azerty")
 
 # Tableau de catégories possibles
 categories = ['Sport', 'Déguisement', 'Pantalon', 'Jupe', 'Robe', 'Costume', 'Manteau', 'Autre']
+
 
 # Tableaux d'images par catégorie
 images_sport = [
@@ -132,6 +126,7 @@ images_deguisement_enfant = [
 
 # Tableaux de genre (sexe) et de types
 genres = ['Femme', 'Homme', 'Enfant']
+
 sizes = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
 
 # Génération des produits
@@ -187,6 +182,7 @@ end
 
   Product.create!(
     user_id: User.first.id,
+
     category: category,
     size: sizes.sample,
     price: random_price,
@@ -197,5 +193,8 @@ end
     textile_type: type,
     couleurs: colors,
     image: images,
+
   )
 end
+
+puts "Seed completed"
