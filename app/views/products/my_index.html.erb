@@ -13,7 +13,7 @@
 <div class="cards colored-border-top">
   <% @products.each do |product| %>
       <div class="card">
-    <%= link_to product_path(product) do %>
+    <%= link_to product_path(product), class: "full-w" do %>
         <% if product.image.nil? %>
           <% product.image = "placeholder.jpg" %>
           <%= image_tag(product.image, alt: product.title) %>
