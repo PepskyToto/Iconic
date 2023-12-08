@@ -1,14 +1,18 @@
-<h4 class = "p-5 text-center">Mes favoris</h4>
+<% if @products.length == 0 %>
+  <h4 class = "p-5 text-center">Mes produits</h4>
+  <div class="cards colored-border-top">
+    <p class="text-center">Vous n'avez pas encore publié de produits</p>
+  </div>
+  <div class ="d-flex justify-center">
+  <%= link_to "Ajouter un produit", new_product_path, class: 'resa-button mx-auto text-center' %>
+  </div>
+  <%# <%= link_to "Modifier", edit_product_path(@product), class: "resa-button mx-auto text-center" %> 
+<% end %>
+
+
 <div class="cards colored-border-top">
   <% @products.each do |product| %>
       <div class="card">
-        <%= link_to product_bookmarks_path(product), data: { 'turbo-method'=> :post }, class: 'add-to-favorites-button' do %>
-          <% if product.bookmarks.where(user: current_user).exists? %>
-            <i class="fa-solid fa-heart favorite-icon favorite-active"></i>
-          <% else %>
-            <i class="fa-solid fa-heart favorite-icon"></i>
-            <% end %>
-        <% end %>
     <%= link_to product_path(product) do %>
         <% if product.image.nil? %>
           <% product.image = "placeholder.jpg" %>
@@ -24,3 +28,4 @@
       </div>
     <% end %>
   <% end %>
+</div>

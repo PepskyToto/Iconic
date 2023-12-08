@@ -14,6 +14,10 @@ class ProductsController < ApplicationController
     end
   end
 
+  def my_index
+    @products = Product.where(user_id: current_user.id)
+  end
+
   def show
     @product = Product.find_by(id: params[:id])
     @booking = Booking.new

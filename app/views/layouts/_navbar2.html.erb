@@ -50,8 +50,10 @@
             <!-- Nom d'utilisateur (si connecté) -->
             <ul class="list-unstyled"><%= current_user.username %></ul>
             <!-- Lien de déconnexion (si connecté) -->
+            <ul class="list-unstyled"><%= link_to 'Mes produits', my_products_path, class: 'devise_decorations' %></ul>
             <ul class="list-unstyled"><%= link_to 'Se déconnecter', destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'devise_decorations' %></ul>
           <% else %>
+
             <!-- Lien de connexion (si non connecté) -->
             <%= link_to 'Se connecter', new_user_session_path, class: 'devise_decorations' %>
           <% end %>
