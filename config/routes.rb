@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root to: "products#index"
+  get '/my_products', to: 'products#my_index', as: :my_products
   resources :products, only: [:destroy], as: :delete_products
   resources :products, except: [:destroy] do
     resources :bookmarks, only: [:new, :create] #maybe destroy?
