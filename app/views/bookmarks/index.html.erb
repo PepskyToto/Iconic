@@ -10,7 +10,7 @@
             <i class="fa-solid fa-heart favorite-icon"></i>
             <% end %>
         <% end %>
-    <%= link_to product_path(product) do %>
+    <%= link_to product_path(product), class: "full-w" do %>
         <% if product.image.nil? %>
           <% product.image = "placeholder.jpg" %>
           <%= image_tag(product.image, alt: product.title) %>
@@ -23,8 +23,8 @@
           <p class = "size-style">Taille : <%= product.size %></p>
         </div>
       </div>
-      </div>
-
     <% end %>
   <% end %>
+      </div>
+
 </div>
