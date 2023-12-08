@@ -17,6 +17,7 @@ Product.destroy_all
 User.destroy_all
 puts "generating User"
 User.create(username: "jf_vt", email: "jfvernet@icloud.com", password: "azerty")
+User.create(username: "Super-Toto", email: "toto@gmail.com", password: "123456")
 # Tableau de catégories possibles
 # categories = ['Sport', 'Déguisement', 'Pantalon', 'Jupe', 'Robe', 'Costume', 'Manteau', 'Autre']
 # images_sport = ['https://cdn.fabletics.com/media/images/products/FL231202/FL231202-2_577x866.jpg?t=1700615709200','https://cdn.fabletics.com/media/images/products/FL231215/FL231215-2_577x866.jpg?t=1700006682273', 'https://cdn.fabletics.com/media/images/products/FL231105/FL231105-2_577x866.jpg?t=1697469349681']
@@ -76,18 +77,15 @@ images_costume_homme = [
   'https://images.asos-media.com/products/selected-homme-pantalon-de-costume-coupe-slim-vert-fonce/204764828-2?$n_320w$&wid=317&fit=constrain'
 ]
 images_manteau = [
-  # Ajoutez des URL d'images pour la catégorie Pantalon
   'https://images.asos-media.com/products/asos-design-duffle-coat-oversize-taupe/205026339-2?$n_320w$&wid=317&fit=constrain',
   'https://images.asos-media.com/products/bershka-trench-coat-en-laine-camel/205822352-2?$n_320w$&wid=317&fit=constrain',
   'https://images.asos-media.com/products/bershka-trench-coat-en-laine-noir/205581865-2?$n_320w$&wid=317&fit=constrain'
 ]
 images_autre_femme = [
-  'https://images.asos-media.com/products/aj-morgan-lunettes-de-soleil-enveloppantes-argente/204154206-2?$n_320w$&wid=317&fit=constrain',
   'https://images.asos-media.com/products/asos-design-lunettes-de-soleil-carrees-a-motif-ecaille-de-tortue/201298388-2?$n_320w$&wid=317&fit=constrain',
   'https://images.asos-media.com/products/valentino-bags-vancouver-sac-porte-epaule-gris-acier/204788791-2?$n_320w$&wid=317&fit=constrain',
   'https://images.asos-media.com/products/forever-new-pochette-a-strass-dore-doux/205260307-2?$n_320w$&wid=317&fit=constrain',
   'https://images.asos-media.com/products/seol-gold-collier-en-argent-massif-avec-cadenas-en-forme-de-cur/205311524-2?$n_320w$&wid=317&fit=constrain',
-  'https://images.asos-media.com/products/asos-design-grosses-creoles-torsadees-effet-entrelace-dore/201006270-2?$n_320w$&wid=317&fit=constrain',
   'https://images.asos-media.com/products/mango-collier-a-detail-chaine-dore/205665475-2?$n_320w$&wid=317&fit=constrain',
   'https://images.asos-media.com/products/new-era-mlb-9forty-ny-casquette-unisexe-ajustable-bleu-marine-fonce/203603043-2?$n_320w$&wid=317&fit=constrain',
   'https://images.asos-media.com/products/asos-design-bonnet-a-large-revers-noir/202368987-2?$n_320w$&wid=317&fit=constrain',
@@ -120,8 +118,7 @@ images_autre_homme = [
   'https://images.asos-media.com/products/new-balance-327-baskets-orange-brule/203644331-2?$n_320w$&wid=317&fit=constrain',
   'https://images.asos-media.com/products/valentino-bags-bosa-sac-bandouliere-marron-noir/204788900-2?$n_320w$&wid=317&fit=constrain',
   'https://images.asos-media.com/products/the-north-face-jester-sac-banane-noir/204511216-2?$n_320w$&wid=317&fit=constrain',
-  'https://images.asos-media.com/products/asos-design-cravate-classique-noir-texture/205344632-2?$n_320w$&wid=317&fit=constrain',
-  'https://images.asos-media.com/products/asos-design-nud-papillon-en-satin-bordeaux/202842934-2?$n_320w$&wid=317&fit=constrain'
+  'https://images.asos-media.com/products/asos-design-cravate-classique-noir-texture/205344632-2?$n_320w$&wid=317&fit=constrain'
 ]
 images_deguisement_enfant = [
   'https://faites-lafete.com/23733-home_default/deguisements-majorettes-enfant-fille.jpg',
@@ -129,9 +126,9 @@ images_deguisement_enfant = [
   'https://faites-lafete.com/23319-home_default/deguisements-policiers-enfant-garcon-.jpg'
 ]
 images_autre_enfant = [
-'https://www.petit-bateau.fr/dw/image/v2/BCKL_PRD/on/demandware.static/-/Sites-PB_master/default/dw64ae4dcc/PB/A08VV02F1.jpg?sw=700&sh=358&sm=fit',
-'https://www.petit-bateau.fr/dw/image/v2/BCKL_PRD/on/demandware.static/-/Sites-PB_master/default/dw5b3c3049/PB/A0A7701F1.jpg?sw=700&sh=358&sm=fit',
-'https://www.petit-bateau.fr/fstrz/r/s/c/www.petit-bateau.fr/dw/image/v2/BCKL_PRD/on/demandware.static/-/Sites-PB_master/default/dwedc18732/PB/A09GE00D.jpg.avif?sw=700&sh=358&sm=fit&frz-v=26&frz-v=26'
+  'https://images.asos-media.com/products/new-era-mlb-9forty-ny-casquette-unisexe-ajustable-bleu-marine-fonce/203603043-2?$n_320w$&wid=317&fit=constrain',
+  'https://images.asos-media.com/products/new-balance-550-baskets-blanc-et-gris/201076606-2?$n_320w$&wid=317&fit=constrain',
+  'https://images.asos-media.com/products/ginger-ray-calendrier-de-lavent-avec-petites-chaussettes/202794706-2?$n_320w$&wid=317&fit=constrain'
 ]
 images_sport_enfant = [
 'https://www.petit-bateau.fr/dw/image/v2/BCKL_PRD/on/demandware.static/-/Sites-PB_master/default/dwa8a54522/PB/A081303J1.jpg?sw=700&sh=358&sm=fit',
@@ -141,7 +138,7 @@ images_sport_enfant = [
 genres = ['Femme', 'Homme', 'Enfant']
 sizes = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
 # Génération des produits
-100.times do
+300.times do
   type = ['Laine', 'Coton', 'Soie', 'Lin', 'Synthétique', 'Plastique', 'Acier', 'Autre'].sample
   colors = ["rouge", "bleu", "jaune", "Vert", "Blanc", "Noir", "Gris", "Autre"].sample
   genre = genres.sample # Par défaut, tous les produits sont pour les femmes
@@ -194,7 +191,7 @@ sizes = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
     when 'Sport'
       images = images_sport_enfant.sample
     when 'Autre'
-      images_autre_enfant.sample
+      images = images_autre_enfant.sample
   end
 end
   Product.create!(
