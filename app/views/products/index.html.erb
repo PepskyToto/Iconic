@@ -1,11 +1,14 @@
-
 <div class="selected-list">
+
 <%= form_tag(products_path, method: :get, class: "mt-3") do %>
-  <%= select_tag :sexe, options_for_select(['Homme', 'Femme', 'Enfant'], params[:sexe]), include_blank: 'Sélectionner un sexe'  %>
+  <%= select_tag :sexe, options_for_select(['Homme', 'Femme', 'Enfant'], params[:sexe]), include_blank: 'Sélectionner un genre' %>
+  <%= select_tag :category, options_for_select(['Sport', 'Déguisement', 'Pantalon', 'Jupe', 'Robe', 'Costume', 'Manteau', 'Autre'], params[:category]), include_blank: 'Sélectionner une catégorie' %>
+  <%= select_tag :size, options_for_select(['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'], params[:size]), include_blank: 'Sélectionner une taille'  %>
   <%= select_tag :couleurs, options_for_select(['Rouge', 'Bleu', 'Jaune', 'Vert', 'Blanc', 'Noir', 'Gris', 'Orange', 'Violet', 'Marron'], params[:couleurs]), include_blank: 'Sélectionner une couleur' %>
-  <%= select_tag :textile_type, options_for_select(['Laine', 'Coton', 'Soie', 'Lin', 'Synthétique', 'Plastique', 'Acier', 'Autre'], params[:textile_type]), include_blank: 'Sélectionner un type de textile' %>
+  <%= select_tag :textile_type, options_for_select(['Laine', 'Coton', 'Soie', 'Lin', 'Synthétique', 'Plastique', 'Acier', 'Autre'], params[:textile_type]), include_blank: 'Préciser la matière' %>
   <%= submit_tag 'Filtrer', class: 'dropdown-button-2' %>
 <% end %>
+
 </div>
 <h4 class = "p-4 text-center">Toutes les annonces</h4>
 <div class="cards colored-border-top">

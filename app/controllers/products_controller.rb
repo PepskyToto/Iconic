@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
       @products = @products.filter_by_sexe(params[:sexe]) if params[:sexe].present?
+      @products = @products.filter_by_category(params[:category]) if params[:category].present?
+      @products = @products.filter_by_size(params[:size]) if params[:size].present?
       @products = @products.filter_by_couleurs(params[:couleurs]) if params[:couleurs].present?
       @products = @products.filter_by_textile_type(params[:textile_type]) if params[:textile_type].present?
     end

@@ -14,7 +14,6 @@
             <%= form.input :size, label: "Taille" do %>
               <%= form.collection_select :size, %w[XS S M L XL XXL XXXL], :to_s, :to_s, prompt: 'Sélectionner une taille' %>
             <% end %>
-              
   <%= form.input :sexe, label: "Genre" do %>
     <%= form.collection_select :sexe, ['Homme', 'Femme', 'Enfant'], :to_s, :to_s, prompt: 'Sélectionner un genre' %>
   <% end %>
