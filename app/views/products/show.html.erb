@@ -66,10 +66,10 @@
   <h1 class="pb-3 colored-border-bottom"><%= @product.title %></h1>
   <p><%= @product.description %></p>
   <div class="d-flex justify-content-end p-2">
-    <h5>Taille :</h5>
-    <p><%= @product.size %></p>
+    <h5>Taille : <%= @product.size %></h5>
+    <p></p>
   </div>
-  
+
 </div>
     <% if current_user && current_user.id == @product.user_id %>
         <div class = "col-6 reservation-box ps-5">
