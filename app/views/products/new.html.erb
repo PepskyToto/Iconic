@@ -5,15 +5,15 @@
       <div class="text-center">
         <%= simple_form_for @product, html: { class: "mt-3" } do |form| %>
           <div class="row">
+            <%= form.input :title, label: "Titre" %>
+            <%= form.input :description, label: "Description" %>
+            <%= form.input :price, label: "Prix" %>
             <%= form.input :category, label: "Catégorie" do %>
                 <%= form.collection_select :category, ['Sport', 'Déguisement', 'Pantalon', 'Jupe', 'Robe', 'Costume', 'Manteau', 'Autre'], :to_s, :to_s, prompt: 'Sélectionner une catégorie' %>
   <% end %>
             <%= form.input :size, label: "Taille" do %>
               <%= form.collection_select :size, %w[XS S M L XL XXL XXXL], :to_s, :to_s, prompt: 'Sélectionner une taille' %>
             <% end %>
-            <%= form.input :price, label: "Prix" %>
-            <%= form.input :title, label: "Titre" %>
-            <%= form.input :description, label: "Description" %>
               
   <%= form.input :sexe, label: "Genre" do %>
     <%= form.collection_select :sexe, ['Homme', 'Femme', 'Enfant'], :to_s, :to_s, prompt: 'Sélectionner un genre' %>
