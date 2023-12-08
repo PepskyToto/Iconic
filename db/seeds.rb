@@ -17,6 +17,7 @@ Product.destroy_all
 User.destroy_all
 puts "generating User"
 User.create(username: "jf_vt", email: "jfvernet@icloud.com", password: "azerty")
+User.create(username: "Super-Toto", email: "toto@gmail.com", password: "123456")
 # Tableau de catégories possibles
 # categories = ['Sport', 'Déguisement', 'Pantalon', 'Jupe', 'Robe', 'Costume', 'Manteau', 'Autre']
 # images_sport = ['https://cdn.fabletics.com/media/images/products/FL231202/FL231202-2_577x866.jpg?t=1700615709200','https://cdn.fabletics.com/media/images/products/FL231215/FL231215-2_577x866.jpg?t=1700006682273', 'https://cdn.fabletics.com/media/images/products/FL231105/FL231105-2_577x866.jpg?t=1697469349681']
@@ -194,7 +195,7 @@ sizes = ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']
     when 'Sport'
       images = images_sport_enfant.sample
     when 'Autre'
-      images_autre_enfant.sample
+      images = images_autre_enfant.sample
   end
 end
   Product.create!(
