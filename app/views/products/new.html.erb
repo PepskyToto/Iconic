@@ -8,7 +8,9 @@
             <%= form.input :title, label: "Titre" %>
             <%= form.input :description, label: "Description" %>
             <%= form.input :price, label: "Prix" %>
-            <%= form.input :category, label: "Catégorie" do %>
+
+
+            <%= form.input :category, label: "Catégorie" do  %>
                 <%= form.collection_select :category, ['Sport', 'Déguisement', 'Pantalon', 'Jupe', 'Robe', 'Costume', 'Manteau', 'Autre'], :to_s, :to_s, prompt: 'Sélectionner une catégorie' %>
   <% end %>
             <%= form.input :size, label: "Taille" do %>
@@ -23,6 +25,7 @@
   <%= form.input :textile_type, label: "Matière" do %>
     <%= form.collection_select :textile_type, %w[Laine Coton Soie Lin Synthétique Plastique Acier Autre], :to_s, :to_s, prompt: 'Sélectionner un type de textile' %>
   <% end %>
+  </div>
             <div class="col-12">
               <%= form.button :submit, "Ajouter votre produit", class: "resa-button" %>
             </div>
