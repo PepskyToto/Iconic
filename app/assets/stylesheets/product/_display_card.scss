@@ -10,9 +10,9 @@ input[type="checkbox"] {
 .cards {
   display: flex;
   flex-wrap: wrap; /* Permet aux cartes de passer à la ligne lorsque l'espace est insuffisant */
-  // justify-content: center; /* Espace entre les cartes et les bords de la fenêtre */
-  gap: 10px; /* Espacement horizontal entre les cartes */
-  padding: 30px; /* Espace entre les cartes et les bords de la fenêtre (margin) */
+  justify-content: center; /* Espace entre les cartes et les bords de la fenêtre */
+  gap: 6px; /* Espacement horizontal entre les cartes */
+  padding: 50px; 
 }
 
 .favorite-icon {
@@ -32,13 +32,10 @@ input[type="checkbox"] {
 }
 
 .card {
-  // flex-basis: calc(25% - 15px);
-  width: 200px;
-  height: 250px;
-  margin-right: 10px;
-  // position: relative;
+  flex-basis: calc(25% - 15px);
+  position: relative;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 15px;
   border: none;
 }
 
@@ -47,7 +44,7 @@ input[type="checkbox"] {
   height: 100%; /* La hauteur de l'image doit être de 100% pour remplir la hauteur de la carte */
   object-fit: cover; /* Optionnel : ajustez la taille de l'image de fond */
   // background-repeat: repeat; /* Optionnel : empêchez la répétition de l'image de fond */
-  object-position: center; /* Centrer l'image horizontalement et verticalement */
+  background-repeat: no-repeat; /* Centrer l'image horizontalement et verticalement */
   // position: relative;
 }
 
@@ -55,7 +52,7 @@ input[type="checkbox"] {
 .card-info {
   position: absolute;
   bottom: 0;
-  background: rgba(244, 176, 131, 0.577); /* Fond semi-transparent */
+  background: rgba(244, 176, 131, 0.22);
   color: rgb(255, 255, 255);
   width: 100%;
   transform: translateY(100%);
