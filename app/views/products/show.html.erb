@@ -1,3 +1,4 @@
+<% if @product.image == nil %>
 <div id = "main_container" class="container mt-5">
     <div class="col-8 mx-auto">
   <div class="row">
@@ -26,6 +27,36 @@
     </div>
   </div>
 </div>
+<% else %>
+<div id = "main_container" class="container mt-5">
+    <div class="col-8 mx-auto">
+  <div class="row">
+    <!-- Grande photo (col-6) -->
+    <div class="col-12 col-md-6 mt-3 mb-3">
+      <%= image_tag @product.image, class: "img-fluid product_images w-100 h-100", alt: "Large Photo" %>
+    </div>
+
+    <!-- Quatre petites photos (col-6) formant deux lignes de deux -->
+    <div class="col-12 col-md-6">
+      <div class="row">
+        <div class="col-6 mt-3 mb-3">
+          <%= image_tag @product.image, class: "img-fluid product_images", alt: "Small Photo 1" %>
+        </div>
+        <div class="col-6 mt-3 mb-3">
+          <%= image_tag @product.image, class: "img-fluid product_images", alt: "Small Photo 2" %>
+        </div>
+        <div class="col-6 mt-3 mb-3">
+          <%= image_tag @product.image, class: "img-fluid product_images", alt: "Small Photo 3" %>
+        </div>
+        <div class="col-6 mt-3 mb-3">
+          <%= image_tag @product.image, class: "img-fluid product_images", alt: "Small Photo 4" %>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
 
 <div class="container mt-5">
     <div class="col-10 mx-auto">
