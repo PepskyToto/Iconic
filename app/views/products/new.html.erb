@@ -14,7 +14,7 @@
             <%= form.input :price, label: "Prix" %>
             <%= form.input :title, label: "Titre" %>
             <%= form.input :description, label: "Description" %>
-              
+
   <%= form.input :sexe, label: "Genre" do %>
     <%= form.collection_select :sexe, ['Homme', 'Femme', 'Enfant'], :to_s, :to_s, prompt: 'Sélectionner un genre' %>
   <% end %>
