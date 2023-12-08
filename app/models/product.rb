@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :user
-  has_many :bookmarks
-  has_many :bookings
+  has_many :bookmarks, dependant: :destroy
+  has_many :bookings, dependant: :destroy
   has_many :reviews
 
   validates :sexe, presence: true
