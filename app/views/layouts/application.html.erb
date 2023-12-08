@@ -16,7 +16,32 @@
 
   <body>
     <%= render "layouts/navbar2" %>
+ <%= yield%>
+    </main>
+  </body>
+  <footer class = "mt-5">
+<div class="footer">
+  <div class="footer-links">
+    <div class="footer-name">
+  <%= link_to 'Iconic, Inc.', root_path %>
+<%= link_to 'Confidentialité', root_path %>
+<%= link_to 'Conditions générales', root_path %>
+<%= link_to 'Contact', root_path %>
 
+</div>
+
+ <br>
+  <%# <div class="freuro ml-2">
+    <span>Français</span>
+    <span>EUR</span>
+  </div> %>
+  <div class="socials">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+    </div>
+    </footer>
 
   <%# <article data-controller="toggle">
    <div class="row">
@@ -628,29 +653,3 @@
 
 <%# <br>
 <br> %>
-    <%= yield%>
-    </main>
-  </body>
-  <footer class = "mt-5">
-<div class="footer">
-  <div class="footer-links">
-    <div class="caca">
-  <%= link_to 'Iconic, Inc.', root_path %>
-<%= link_to 'Confidentialité', root_path %>
-<%= link_to 'Conditions générales', root_path %>
-<%= link_to 'Contact', root_path %>
-
-</div>
-
- <br>
-  <%# <div class="freuro ml-2">
-    <span>Français</span>
-    <span>EUR</span>
-  </div> %>
-  <div class="socials">
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-</div>
-    </div>
-    </footer>
